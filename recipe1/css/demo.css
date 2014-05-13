@@ -95,10 +95,10 @@ a{
 }
 /* Header Style */
 .codrops-top{
-	line-height: 130px;
+/*	line-height: 130px;*/
 	font-size: 11px;
 	background: #fff;
-	background: rgba(66, 62 ,76,0.8);
+	background: rgba(66, 62 ,76,1);
 	text-transform: uppercase;
 	z-index: 9999;
 	position: relative;
@@ -116,8 +116,6 @@ a{
 }
 .codrops-top span.right{
 	float: right;
-    display: inline;
-    
 }
 .codrops-top span.right a{
 	float: left;
