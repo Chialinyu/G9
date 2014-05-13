@@ -1,0 +1,127 @@
+
+body {
+/*	background-color: #8BADB2 ;*/
+
+}
+/*
+header {
+	background-color: #423E4C ;
+	height: 130px;
+	width: 960px;
+	margin-right: auto ;
+	margin-left: auto ;
+	
+}*/
+
+/*
+#background{
+	background-color: #8BADB2 ;
+	height: 575px;
+	width: 960px;
+	margin-right: auto ;
+	margin-left: auto ;
+}
+*/
+
+section {	
+	height: 396px;
+	width: 700px;
+	background-color: #F1CF89;
+	text-align: left;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	font-family: Verdana ;
+	color: #423E4C ;
+	position: relative;
+	top:90px;
+	margin-right: auto ;
+	margin-left: auto ;
+}
+
+h1{
+	text-align: center;
+	font-size: 2.5em ;
+	margin: 0px ;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+form{
+	font-size: 1em ;
+	text-align: left;
+	margin-left: 8em;
+}
+
+input{
+	height: 53px;
+	width: 300px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin: 5px;
+}
+
+#login_link {
+	clear:right;
+
+}
+
+#login_link a {
+	display: inline-block;
+	padding: 15px;
+}
+
+.icon{
+	height: 25px;
+	width: 25px;
+	vertical-align: middle;
+}
+
+#fb_login{	
+	height: 53px;
+	width: 286px;
+	border: none ;
+	background-color: transparent;
+	margin-top: 5px;
+	margin-left: 120px;
+	margin-right: 20px;
+	float: left;
+}
+
+#fb_login img{
+	height: 53px;
+	width: 286px;	
+}
+
+#login{	
+	height: 53px;
+	width: 136px;
+	border: none ;
+	background-color: transparent;
+	margin-top: 5px;
+}
+
+#login img{
+	height: 53px;
+	width: 136px;	
+}
+
+#sign_up {
+	height: 53px;
+	width: 136px;
+	background-color: #423E4C;
+	
+	color: white ;
+	font-family: verdana ;
+	font-size: 1.5em;
+	border: none ;
+	margin-top: 5px;
+
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	display: block;
+
+}
