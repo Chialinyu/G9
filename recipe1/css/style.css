@@ -25,35 +25,7 @@ a{
 	position: relative;
 	min-height: 100%;
 }
-.more ul{
-	font-family: 'PT Sans Narrow', Arial, sans-serif;
-	text-transform:uppercase;
-	font-size:13px;
-	font-weight:bold;
-	padding:20px 0px 10px 20px;
-	height:30px;
-}
-.more ul li{
-	float:left;
-	margin:0px 1px;
-}
-.more ul li.selected a,
-.more ul li.selected a:hover{
-	background:#000;
-	color:#fff;
-	text-shadow:none;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	border-radius:5px 5px 5px 5px;
-}
-.more ul li a{
-	text-shadow:1px 1px 1px #fff8ec;
-	color:#a88033;
-	padding:3px 6px;
-}
-.more ul li a:hover{
-	color:#59441b;
-}
+
 .content {
 	width:100%;
 	margin:0 auto;
@@ -105,10 +77,34 @@ h1 span{
 	position:relative;
 }
 
+.right li{
+    float:left;
+    width: 160px;
+    display: :inline;
+    list-style:none;
+    margin-left: -65px;
+    
+}
+
+
+
 footer{
     padding-top: 1px;
     clear:both;
     text-align: center;
     color:white;
     background-color: rgb(141, 122, 132);
+}
+
+.button {
+    width: 60%;
+    margin-left: 65px;
+}
+
+.logo {
+    float: right;
+    width: 420px;
+    
+/*    margin-left: -20px;*/
+    
 }
