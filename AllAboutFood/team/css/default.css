@@ -172,6 +172,10 @@ footer {
     text-align: center;
     color: rgb(176, 212, 207);
     background-color: rgb(141,122,132);
+/*    position: relative;*/
+/*    margin-top: 0px;  */
+/*    height: 60px;*/
+    margin-bottom: auto;
 }
 
 .detail {
