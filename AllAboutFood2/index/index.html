@@ -27,7 +27,29 @@
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/･･･/bootstrap-theme.min.css">
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="http://netdna.bootstrapcdn.com/･･･/3.1.1/js/bootstrap.min.js"></script>
+	
+           <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+   <link rel="stylesheet" href="../apply/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+   <script type="text/javascript" src="../apply/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+   
 	</head>
+    
+<script type="text/javascript">
+	$(document).ready(function() {
+	
+		$('.fancybox').fancybox({
+            padding:0, margin:0 ,background: 'none',
+    		'type': 'iframe', 
+    		'scrolling': 'no',  
+    		'iframe': {'scrolling': 'no'}
+		});	
+        
+        
+	});  
+	$(function(){
+	  $.scrollIt();
+	});
+  </script>
 	
 	<body>	
 		
@@ -72,7 +94,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a class="fancybox fancybox.iframe"  href="../Login.html"  >
 								<span class="icon_nav">
 									<i aria-hidden="true" class="icon-team"></i>
 								</span>
