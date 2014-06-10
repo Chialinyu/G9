@@ -10,7 +10,7 @@ window.fbAsyncInit = function () {
 
     FB.init({
 
-        appId: '352670434772249', // Facebook App ID
+        appId: '1515134405376425', // Facebook App ID
 
         status: true, // check login status
 
@@ -18,7 +18,7 @@ window.fbAsyncInit = function () {
 
         xfbml: true, // parse XFBML
 
-        version: 'v1.0'
+        version: 'v2.0'
 
     });
 
