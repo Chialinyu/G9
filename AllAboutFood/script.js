@@ -34,36 +34,36 @@ window.fbAsyncInit = function () {
 
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
-
-            var uid = response.authResponse.userID;
-            var accessToken = response.authResponse.accessToken;
-            FB.api('/me', function (response) {
-                //console.log(response);
-                $("body").append('My links is' + response.link);
-                 $("body").append('My Username is' + response.username); document.getElementsByTagName('body').innerHTML = ""
-                 $("body").append('My ID is' + response.id);
-            });
-
-
-//            FB.ui({
-//                method: 'share',
-//                href: 'http://chialinyu.github.io/G9/AllAboutFood/index/index.html',
-//            }, function (response) {});
 //
-
-//            FB.api('/me/photos', 'post', {
-//                name:"test",
-//                message: 'this is parse photo',
-//                url: "http://chialinyu.github.io/G9/AllAboutFood/index/images/logo3.jpg"//如果要init運行只能用絕對絕對路徑
-//            }, function (response) {
-//                if (!response || response.error) {
-//                    alert('Error occured:' + response);
-//                    console.log(response);
-//                } else {
-//                    alert('Post ID: ' + response.id);
-//                }
+//            var uid = response.authResponse.userID;
+//            var accessToken = response.authResponse.accessToken;
+//            FB.api('/me', function (response) {
+//                //console.log(response);
+//                $("body").append('My links is' + response.link);
+//                 $("body").append('My Username is' + response.username); document.getElementsByTagName('body').innerHTML = ""
+//                 $("body").append('My ID is' + response.id);
 //            });
-
+//
+//
+////            FB.ui({
+////                method: 'share',
+////                href: 'http://chialinyu.github.io/G9/AllAboutFood/index/index.html',
+////            }, function (response) {});
+////
+//
+////            FB.api('/me/photos', 'post', {
+////                name:"test",
+////                message: 'this is parse photo',
+////                url: "http://chialinyu.github.io/G9/AllAboutFood/index/images/logo3.jpg"//如果要init運行只能用絕對絕對路徑
+////            }, function (response) {
+////                if (!response || response.error) {
+////                    alert('Error occured:' + response);
+////                    console.log(response);
+////                } else {
+////                    alert('Post ID: ' + response.id);
+////                }
+////            });
+//
         } else if (response.status === 'not_authorized') {
             console.log("this user is not authorizied your apps");
             FB.login(function (response) {
@@ -75,15 +75,15 @@ window.fbAsyncInit = function () {
                 scope: 'user_about_me,email,user_location,user_photos,publish_actions,user_birthday,user_likes'
             });
         } else {
-            console.log("this isn't logged in to Facebook.");
-            FB.login(function (response) {
-                if (response.authResponse) {
-                    window.location.reload();
-                } else {
-                    //alertify.alert('An Error has Occurs,Please Reload your Pages');
-                }
-            });
-        }
+//            console.log("this isn't logged in to Facebook.");
+//            FB.login(function (response) {
+//                if (response.authResponse) {
+//                    window.location.reload();
+//                } else {
+//                    //alertify.alert('An Error has Occurs,Please Reload your Pages');
+//                }
+//            });
+//        }
     });
 }; //<<<<<<<<<<<<<<<init end    
 
