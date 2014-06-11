@@ -38,6 +38,9 @@
             padding:0, margin:0 ,background: 'none',
     		'type': 'iframe', 
     		'scrolling': 'no',  
+            'afterClosed': function(){
+                parent.location.reload(true); 
+            ;}
     		'iframe': {'scrolling': 'no'}
 		});	
         

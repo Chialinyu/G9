@@ -53,7 +53,7 @@ function clickFBLogin(){
                     
                     alert("used to login before~~~~~");
 //                    $.fancybox.close(true);
-                    window.location.reload();
+                    
                     
                 },
                 error: function () {
