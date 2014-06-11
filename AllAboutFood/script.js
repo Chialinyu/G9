@@ -52,7 +52,7 @@ function clickFBLogin(){
                     });
                     
                     alert("used to login before~~~~~");
-                    $.fancybox.close();
+                    $(this).fancybox.close();
                     
                 },
                 error: function () {
