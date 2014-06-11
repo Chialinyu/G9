@@ -32,64 +32,76 @@ window.fbAsyncInit = function () {
           }
         });
 
-    FB.getLoginStatus(function (response) {
-        if (response.status === 'connected') {
-//
-//            var uid = response.authResponse.userID;
-//            var accessToken = response.authResponse.accessToken;
-//            FB.api('/me', function (response) {
-//                //console.log(response);
-//                $("body").append('My links is' + response.link);
-//                 $("body").append('My Username is' + response.username); document.getElementsByTagName('body').innerHTML = ""
-//                 $("body").append('My ID is' + response.id);
-//            });
-//
-//
-////            FB.ui({
-////                method: 'share',
-////                href: 'http://chialinyu.github.io/G9/AllAboutFood/index/index.html',
-////            }, function (response) {});
-////
-//
-////            FB.api('/me/photos', 'post', {
-////                name:"test",
-////                message: 'this is parse photo',
-////                url: "http://chialinyu.github.io/G9/AllAboutFood/index/images/logo3.jpg"//如果要init運行只能用絕對絕對路徑
-////            }, function (response) {
-////                if (!response || response.error) {
-////                    alert('Error occured:' + response);
-////                    console.log(response);
-////                } else {
-////                    alert('Post ID: ' + response.id);
-////                }
-////            });
-//
-        } else if (response.status === 'not_authorized') {
-            console.log("this user is not authorizied your apps");
-            FB.login(function (response) {
-                // FB.api('/me/feed', 'post', {message: 'I\'m started using FB API'});
-                if (response.authResponse) { // if user login to your apps right after handle an event
-                    window.location.reload();
-                };
-            }, {
-                scope: 'user_about_me,email,user_location,user_photos,publish_actions,user_birthday,user_likes'
-            });
-        } else {
-//            console.log("this isn't logged in to Facebook.");
-//            FB.login(function (response) {
-//                if (response.authResponse) {
-//                    window.location.reload();
-//                } else {
-//                    //alertify.alert('An Error has Occurs,Please Reload your Pages');
-//                }
-//            });
-      
-        }
-    });
 }; //<<<<<<<<<<<<<<<init end    
 
 
+$("#fb_login").function ClickFBLogin(){
+    FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+            
+            var FacebookID = Parse.Object.extend("FacebookID");//class
+            var query2 = new Parse.Query(FacebookID);
+            
+            query2.find({
+                success: function (results) {
+                    results.forEach(function (e) {
+                        var fbid = e.get("userID");
+                        var username = e.get('username');
+                    });
+                },
+                error: function () {
+                    // error is an instance of Parse.Error.
+                }
+            });
+        } else if (response.status === 'not_authorized') {
+            
+           FacebookLogin();
+            
+        } else {
+            
+            // the user isn't logged in to Facebook.
+            FacebookLogin();
+        }
+    });
+}
 
+//LOGIN Fix
+
+function FacebookLogin() {
+    FB.login(function (response) {
+        if (response.authResponse) {
+            FB.api('/me', function (response) {
+                        var userName = response.name;   
+                        var userID = response.id;
+                        var FacebookID = Parse.Object.extend("FacebookID");
+//                        console.log('Good to see you, ' + response.name + '.');
+//                        var FacebookID = Parse.Object.extend("FacebookID");
+                        var query = new Parse.Query(FacebookID);
+                        query.equalTo("userID", userID);//
+                        query.find({
+                          success: function(results) {
+                              console.log(results.length);
+                              if (results.length === 0){//沒有資料回傳
+                                var facebookID = new FacebookID();//不用自己手動建class
+                                facebookID.set("username",userName);
+                                facebookID.set("userID",userID);
+                                facebookID.save();
+                              }   
+                          }, 
+                          error: function(error) {
+                            alert("Error: " + error.code + " " + error.message);
+                          }
+                        });
+            });
+            $('.info').html('Wait we\'ll sent you back....');
+            setTimeout(function () {
+                window.location.reload();
+            }, 2000); // little hack for allow api to fetch data alittle bit longer
+        }
+    }, {
+        scope: 'user_likes'
+    });
+}
 
 //LOAD FACEBOOK SDK ASYNC，這是基本的東西，應該不用多說了吧
 (function (d, s, id) {
@@ -99,6 +111,6 @@ window.fbAsyncInit = function () {
     }
     js = d.createElement(s);
     js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js"; 
+    js.src = "//connect.facebook.net/en_US/sdk.js"; 
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));

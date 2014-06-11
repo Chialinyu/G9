@@ -24,13 +24,30 @@ window.fbAsyncInit = function () {
 
 
 
-    FB.getLoginStatus(function (response) {
+
+
+
+
+    // Additional initialization code here
+
+    
+
+    
+
+
+
+}; //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<init end
+
+
+function LoginClick(){
+    
+        FB.getLoginStatus(function (response) {
 
         if (response.status === 'connected') {
 
             $('#login').remove();
 
-            var FacebookID = Parse.Object.extend("FacebookID");
+            var FacebookID = Parse.Object.extend("FacebookID");//class
 
             var query2 = new Parse.Query(FacebookID);
 
@@ -41,11 +58,11 @@ window.fbAsyncInit = function () {
                     results.forEach(function (e) {
 
                         var fbid = e.get("userID");
-console.log("fbid=",fbid);
+
                         var username = e.get('username');
-console.log("username=",username);
+
                         var getfieldname = $('#valueID').val();
-console.log("fieldname=",getfieldname);
+
                         var output = '<option id="valueID" value=' + fbid + '>' + username + '</option>';
 
                         $('#facebookname').append(output);
@@ -85,18 +102,7 @@ console.log("fieldname=",getfieldname);
         }
 
     });
-
-
-
-    // Additional initialization code here
-
-    
-
-    
-
-
-
-}; //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<init end
+}
 
 
 
@@ -116,13 +122,13 @@ function FacebookLogin() {
 
                         var FacebookID = Parse.Object.extend("FacebookID");
 
-                        console.log('Good to see you, ' + response.name + '.');
+//                        console.log('Good to see you, ' + response.name + '.');
 
-                        var FacebookID = Parse.Object.extend("FacebookID");
+//                        var FacebookID = Parse.Object.extend("FacebookID");
 
                         var query = new Parse.Query(FacebookID);
 
-                        query.equalTo("userID", userID);
+                        query.equalTo("userID", userID);//
 
                         query.find({
 
@@ -130,9 +136,9 @@ function FacebookLogin() {
 
                               console.log(results.length);
 
-                              if (results.length === 0){
+                              if (results.length === 0){//沒有資料回傳
 
-                                var facebookID = new FacebookID();
+                                var facebookID = new FacebookID();//不用自己手動建class
 
                                 facebookID.set("username",userName);
 
