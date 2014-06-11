@@ -51,8 +51,9 @@ function clickFBLogin(){
                         var username = e.get('username');
                     });
                     
-                    $(this).fancybox.close();
                     alert("close~~~~~");
+                    $(this).fancybox.close();
+                    
                 },
                 error: function () {
                     // error is an instance of Parse.Error.
