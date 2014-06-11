@@ -51,8 +51,8 @@ function clickFBLogin(){
                         var username = e.get('username');
                     });
                     
-                    alert("close~~~~~");
-                    $(this).fancybox.close();
+                    alert("used to login before~~~~~");
+                    $.fancybox.close();
                     
                 },
                 error: function () {
@@ -65,7 +65,7 @@ function clickFBLogin(){
            FacebookLogin();
             
         } else {
-            console.log("no login!!");
+            console.log("not login yet!!");
             // the user isn't logged in to Facebook.
             FacebookLogin();
         }
