@@ -41,7 +41,7 @@ $('#fb_login').click(function ClickFBLogin(){
     console.log("I am in!!");
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
-            
+            console.log("connected!!");
             var FacebookID = Parse.Object.extend("FacebookID");//class
             var query2 = new Parse.Query(FacebookID);
             
@@ -57,11 +57,11 @@ $('#fb_login').click(function ClickFBLogin(){
                 }
             });
         } else if (response.status === 'not_authorized') {
-            
+            console.log("no authorized!!");
            FacebookLogin();
             
         } else {
-            
+            console.log("no login!!");
             // the user isn't logged in to Facebook.
             FacebookLogin();
         }
