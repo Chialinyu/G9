@@ -38,7 +38,7 @@ window.fbAsyncInit = function () {
 
 
 $('#fb_login').click(function ClickFBLogin(){
-    console.log("I am in!!",response.status);
+    console.log("I am in!!");
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
             console.log("connected!!");
