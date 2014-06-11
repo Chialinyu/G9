@@ -41,11 +41,11 @@ window.fbAsyncInit = function () {
                     results.forEach(function (e) {
 
                         var fbid = e.get("userID");
-
+console.log("fbid=",fbid);
                         var username = e.get('username');
-
+console.log("username=",username);
                         var getfieldname = $('#valueID').val();
-
+console.log("fieldname=",getfieldname);
                         var output = '<option id="valueID" value=' + fbid + '>' + username + '</option>';
 
                         $('#facebookname').append(output);
