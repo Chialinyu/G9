@@ -36,9 +36,8 @@ window.fbAsyncInit = function () {
 
 }; //<<<<<<<<<<<<<<<init end    
 
-    console.log("I am out!!");
+
 function clickFBLogin(){
-    console.log("I am in!!");
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
             console.log("connected!!");
@@ -51,9 +50,13 @@ function clickFBLogin(){
                         var fbid = e.get("userID");
                         var username = e.get('username');
                     });
+                    
+                    $(this).fancybox.close();
+                    alert("close~~~~~");
                 },
                 error: function () {
                     // error is an instance of Parse.Error.
+                    alert("error~~~~~");
                 }
             });
         } else if (response.status === 'not_authorized') {
