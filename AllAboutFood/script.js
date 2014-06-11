@@ -10,7 +10,7 @@ window.fbAsyncInit = function () {
         appId      : '1515134405376425',
         xfbml      : true,
         version    : 'v2.0',
-        status     : true, // check login status
+//        status     : true, // check login status
         cookie     : true // enable cookies to allow Parse to access the session
     });
     
