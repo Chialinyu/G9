@@ -83,6 +83,7 @@ window.fbAsyncInit = function () {
 //                    //alertify.alert('An Error has Occurs,Please Reload your Pages');
 //                }
 //            });
+      
         }
     });
 }; //<<<<<<<<<<<<<<<init end    
