@@ -4,33 +4,35 @@ Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh
 
 window.fbAsyncInit = function () {
     
-    //facebook init
-    //輸入基本的Facebook init的狀態，與Facebook 連接，包括APP ID的設定
-//    FB.init({
-//        appId      : '1515134405376425',
-//        xfbml      : true,
-//        version    : 'v2.0'
-//    });
+//    facebook init
+//    輸入基本的Facebook init的狀態，與Facebook 連接，包括APP ID的設定
+    FB.init({
+        appId      : '1515134405376425',
+        xfbml      : true,
+        version    : 'v2.0',
+        status     : true, // check login status
+        cookie     : true // enable cookies to allow Parse to access the session
+    });
     
-     Parse.FacebookUtils.init({
-        appId      : '1515134405376425', // Facebook App ID
-        channelUrl : 'http://chialinyu.github.io/G9/AllAboutFood/', // Channel File
-        cookie     : true, // enable cookies to allow Parse to access the session
-        xfbml      : true  // parse XFBML
-     });
+//     Parse.FacebookUtils.init({
+//        appId      : '1515134405376425', // Facebook App ID
+//        channelUrl : 'http://chialinyu.github.io/G9/AllAboutFood/', // Channel File
+//        cookie     : true, // enable cookies to allow Parse to access the session
+//        xfbml      : true  // parse XFBML
+//     });
 //    
-    Parse.FacebookUtils.logIn(null, {
-          success: function(user) {
-            if (!user.existed()) {
-              alert("User signed up and logged in through Facebook!");
-            } else {
-              alert("User logged in through Facebook!");
-            }
-          },
-          error: function(user, error) {
-            alert("User cancelled the Facebook login or did not fully authorize.");
-          }
-        });
+//    Parse.FacebookUtils.logIn(null, {
+//          success: function(user) {
+//            if (!user.existed()) {
+//              alert("User signed up and logged in through Facebook!");
+//            } else {
+//              alert("User logged in through Facebook!");
+//            }
+//          },
+//          error: function(user, error) {
+//            alert("User cancelled the Facebook login or did not fully authorize.");
+//          }
+//        });
 
 }; //<<<<<<<<<<<<<<<init end    
 
@@ -111,6 +113,6 @@ function FacebookLogin() {
     }
     js = d.createElement(s);
     js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js"; 
+    js.src = "//connect.facebook.net/en_US/sdk.js"; 
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
