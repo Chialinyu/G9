@@ -36,8 +36,8 @@ window.fbAsyncInit = function () {
 
 }; //<<<<<<<<<<<<<<<init end    
 
-
-$('#fb_login').click(function clickFBLogin(){
+    console.log("I am out!!");
+$('#fb_login').click(function(){
     console.log("I am in!!");
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
