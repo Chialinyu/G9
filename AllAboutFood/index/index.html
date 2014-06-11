@@ -48,37 +48,37 @@
         
 	});  
     
-    $(document).ready(function() {
- $("#top-login-button").click(function() {
-  $.fancybox({
-   href : "#login_form",
-   padding : 0,
-   // it was onClosed for v1.3.4
-   afterClose : function(){
-    $("#login_error").hide();
-   }
-  }); // fancybox
- }); //click
-
- $("#login_form_ajax").bind("submit", function() {
-  if ($("#login_name").val().length < 1 || $("#login_pass").val().length < 1) {
-   $("#login_error").show();
-   $.fancybox.update(); // it was $.fancybox.resize(); for v1.3.4
-   return false;
-  }
-  $.fancybox.showLoading(); // it was $.fancybox.showActivity(); for v1.3.4
-  $.ajax({
-   type   : "POST",
-   cache  : false,
-   url    : "/login.php",
-   data   : $(this).serializeArray(),
-   success: function(data) {
-    $.fancybox(data);
-   }
-  });
-  return false;
- }); // bind
-}); // ready
+//    $(document).ready(function() {
+// $("#top-login-button").click(function() {
+//  $.fancybox({
+//   href : "#login_form",
+//   padding : 0,
+//   // it was onClosed for v1.3.4
+//   afterClose : function(){
+//    $("#login_error").hide();
+//   }
+//  }); // fancybox
+// }); //click
+//
+// $("#login_form_ajax").bind("submit", function() {
+//  if ($("#login_name").val().length < 1 || $("#login_pass").val().length < 1) {
+//   $("#login_error").show();
+//   $.fancybox.update(); // it was $.fancybox.resize(); for v1.3.4
+//   return false;
+//  }
+//  $.fancybox.showLoading(); // it was $.fancybox.showActivity(); for v1.3.4
+//  $.ajax({
+//   type   : "POST",
+//   cache  : false,
+//   url    : "/login.php",
+//   data   : $(this).serializeArray(),
+//   success: function(data) {
+//    $.fancybox(data);
+//   }
+//  });
+//  return false;
+// }); // bind
+//}); // ready
     
     
 //	$(function(){
@@ -129,7 +129,7 @@
 							</a>
 						</li>
 						<li>
-							<a class="fancybox fancybox.iframe" id="top-login-button"  href="../Login.html"  >
+							<a class="fancybox fancybox.iframe"  href="../Login.html"  >
 								<span class="icon_nav icon">
 									<i aria-hidden="true" class="icon-team"></i>
 								</span>
