@@ -14,7 +14,7 @@ window.fbAsyncInit = function () {
     
      Parse.FacebookUtils.init({
         appId      : '1515134405376425', // Facebook App ID
-        channelUrl : 'http://chialinyu.github.io/G9/AllAboutFood/index/index.html', // Channel File
+        channelUrl : 'http://chialinyu.github.io/G9/AllAboutFood/', // Channel File
         cookie     : true, // enable cookies to allow Parse to access the session
         xfbml      : true  // parse XFBML
      });
