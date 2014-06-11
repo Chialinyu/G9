@@ -22,8 +22,8 @@
     <section>
     	<h2>LOG IN</h2>
     	<form>
-            <img src='./FOOD_files/user_circle.png' class="icon">&nbspUSERNAME<input type="text" name="username" placeholder="Type your username"><br>
-            <img src='./FOOD_files/lock.png' class="icon">PASSWORD<input type="text" placeholder="Type your password">
+            <img src='./FOOD_files/user_circle.png' class="icon">&nbspUSERNAME<input type="text" id="login_name" name="username" placeholder="Type your username"><br>
+            <img src='./FOOD_files/lock.png' class="icon">PASSWORD<input type="text" id="login_pass" placeholder="Type your password">
         </form>
         <div id="login_link">
             <a><img src='./FOOD_files/question.png' class="icon">LOST PASSWORD?</a><br>         
@@ -35,7 +35,7 @@
         </fb:login-button>
 -->
     	<button  id="fb_login" onclick="clickFBLogin()"><img src='./FOOD_files/loginfacebook.png' alt="Facebook Login"></button>
-        <button  id="login" "><img src='./FOOD_files/login.png' alt="Login"></button>
+        <input  id="login" type="submit" ><img src='./FOOD_files/login.png' alt="Login" /></input>
 
     </section>
       <!--匯入Parse SDK-->
