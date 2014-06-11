@@ -35,10 +35,11 @@
         </fb:login-button>
 -->
     	<button  id="fb_login" onclick="clickFBLogin()"><img src='./FOOD_files/loginfacebook.png' alt="Facebook Login"></button>
-        <button  id="login"><img src='./FOOD_files/login.png' alt="Login"></button>
+        <button  id="login" onclick="test"><img src='./FOOD_files/login.png' alt="Login"></button>
     <script>
+        function test(){
         alert("hi");
-        window.location.reload();</script>
+        $(this).fancybox.close();}</script>
 
     </section>
       <!--匯入Parse SDK-->
