@@ -36,6 +36,10 @@ window.fbAsyncInit = function () {
 
 }; //<<<<<<<<<<<<<<<init end    
 
+function reload(){
+            alert("Reload here!!");
+            window.location.reload();
+}
 
 function clickFBLogin(){
     FB.getLoginStatus(function (response) {
@@ -53,7 +57,6 @@ function clickFBLogin(){
                     
                     alert("used to login before~~~~~");
 //                    $.fancybox.close(true);
-                    
                     
                 },
                 error: function () {
