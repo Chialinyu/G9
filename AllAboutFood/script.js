@@ -1,5 +1,6 @@
 // JavaScript Document
 
+Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
 
 window.fbAsyncInit = function () {
     
@@ -10,6 +11,26 @@ window.fbAsyncInit = function () {
         xfbml      : true,
         version    : 'v2.0'
     });
+    
+     Parse.FacebookUtils.init({
+        appId      : '1515134405376425', // Facebook App ID
+        channelUrl : 'http://chialinyu.github.io/G9/AllAboutFood/index/index.html', // Channel File
+        cookie     : true, // enable cookies to allow Parse to access the session
+        xfbml      : true  // parse XFBML
+     });
+    
+    Parse.FacebookUtils.logIn(null, {
+          success: function(user) {
+            if (!user.existed()) {
+              alert("User signed up and logged in through Facebook!");
+            } else {
+              alert("User logged in through Facebook!");
+            }
+          },
+          error: function(user, error) {
+            alert("User cancelled the Facebook login or did not fully authorize.");
+          }
+        });
 
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
@@ -29,27 +50,6 @@ window.fbAsyncInit = function () {
 //                href: 'http://chialinyu.github.io/G9/AllAboutFood/index/index.html',
 //            }, function (response) {});
 //
-//
-//
-//
-//            FB.ui({
-//                method: 'send',
-//                link: 'http://chialinyu.github.io/G9/AllAboutFood/index/index.html',
-//            });
-
-//            FB.api('/me/likes', function (response) {
-//                console.log(response)
-//                for (var i = 0; i < response.data.length; i++){
-//                    console.log(response.data[i].name);
-//                    }
-//            });
-
-//            FB.api('/me/picture?type=normal', function(response) { // normal/large/squere 
-//                var str="<img src="+ response.data.url +">";
-//                $('body').append(str);
-//            });
-
-
 
 //            FB.api('/me/photos', 'post', {
 //                name:"test",
