@@ -127,7 +127,7 @@ function FacebookLogin() {
 }(document, 'script', 'facebook-jssdk'));
 
 $('.click').click(function(){
-    alert(try);
+//    alert(try);
 //    $.fancybox.close();
     parent.$.fancybox.close();
 //    $.colorbox.close();
