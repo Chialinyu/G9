@@ -56,7 +56,7 @@ function clickFBLogin(){
                     });
                     
                     alert("used to login before~~~~~");
-                    $.fancybox.close(true);
+                    $('.fancybox').fancybox.close();
                     
                 },
                 error: function () {
