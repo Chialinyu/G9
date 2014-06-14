@@ -216,3 +216,22 @@ footer {
     color: rgb(176, 212, 207);
     background-color: rgb(141,122,132);
 }
+
+#refrigerator{
+    height: 300px;
+    width: auto;
+    overflow: scroll;
+    background-color: rgb(240, 238, 209);
+    padding: 2em;
+    border-radius: 2em;
+    color: rgb(139,173,178);
+    
+}
+
+.box{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    font-size: 26px; 
+}
+
