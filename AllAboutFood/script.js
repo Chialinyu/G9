@@ -56,7 +56,7 @@ function clickFBLogin(){
                     });
                     
                     alert("used to login before~~~~~");
-                    $('.fancybox').fancybox.close();
+                    $.fancybox.close();
                     
                 },
                 error: function () {
@@ -125,3 +125,8 @@ function FacebookLogin() {
     js.src = "//connect.facebook.net/en_US/sdk.js"; 
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
+
+$('.click').click({
+    $.fancybox.close();
+})
