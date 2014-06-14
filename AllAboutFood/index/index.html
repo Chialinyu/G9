@@ -376,11 +376,11 @@
             //choose~~in~~box~~
             $('#Meat li a').click(function(){
                 var content = $(this).html();
-                var searchInput;
+                var searchInput = "";
                 console.log(content);
                 $('#refrigerator').append('<div class="box" value='+ content +">"+content+"</div>");
                 console.log("hi");
-                searchInput += (content+" ");
+                searchInput = $('#refrigerator .box').value;
                 //
                 $('#gsc-i-id1').val(searchInput);
             })
