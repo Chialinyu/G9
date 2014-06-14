@@ -301,7 +301,7 @@
 								<p><strong>Don't worry, we'll take care of your food.</strong></p>
 								<p><strong>Start with your new life!</strong></p>
 -->
-                                
+                                //google自定搜尋
                                 <div>
                                 <script>
                                   (function() {
@@ -373,11 +373,16 @@
 				}
 			}
             
+            //choose~~in~~box~~
             $('#Meat li a').click(function(){
                 var content = $(this).html();
                 console.log(content);
                 $('#refrigerator').append('<div class="box" value='+ content +">"+content+"</div>");
                 console.log("hi");
+                
+                //
+                $('#gsc-i-id1').val(content);
+//                console.log()
             })
             
 		</script>
