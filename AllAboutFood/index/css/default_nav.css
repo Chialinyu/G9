@@ -185,4 +185,6 @@ text-align: center;
     width: auto;
     overflow: scroll;
     background-color: rgb(240, 238, 209);
+    padding: 2em;
+    border-radius: 2em;
 }
