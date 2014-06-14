@@ -46,7 +46,8 @@
             },
     		'iframe': {'scrolling': 'no'}
 		});	
-
+        
+        
         
 	});  
     
@@ -178,7 +179,7 @@
 								<div class="mp-level">
 									<h2>肉類</h2>
 									<a class="mp-back" href="#">back</a>
-									<ul>
+									<ul id="Meat">
 										<li><a href="#">豬肉</a></li>
 										<li><a href="#">牛肉</a></li>
 										<li><a href="#">羊肉</a></li>
@@ -371,6 +372,13 @@
 					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
 				}
 			}
+            
+            $('#Meat li').click(function(){
+                
+                var content = $(this).html();
+                console.log(content);
+            })
+            
 		</script>
         
 		 <footer>
