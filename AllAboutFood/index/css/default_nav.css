@@ -184,4 +184,5 @@ text-align: center;
     height: 300px;
     width: auto;
     overflow: scroll;
+    background-color: rgb(240, 238, 209);
 }
