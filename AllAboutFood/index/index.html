@@ -380,7 +380,7 @@
                 console.log(content);
                 $('#refrigerator').append('<div class="box" value='+ content +">"+content+"</div>");
                 console.log("hi");
-                searchInput = $('#refrigerator .box').value;
+                searchInput = $('#refrigerator .box').attr('value');
                 //
                 $('#gsc-i-id1').val(searchInput);
             })
