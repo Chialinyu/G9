@@ -28,18 +28,13 @@
            <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
    <link rel="stylesheet" href="../apply/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
    <script type="text/javascript" src="../apply/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-<!--
-   
-        <link rel="stylesheet" href="../apply/colorbox-master/colorbox.css" />
-    <script src="../apply/colorbox-master/jquery.colorbox.js"></script>
--->
+
         
 	</head>
     
 <script type="text/javascript">
 	$(document).ready(function() {
-        
-//        var try = "3";
+
 	
 		$('.fancybox').fancybox({
             padding:0, margin:0 ,background: 'none',
@@ -51,56 +46,10 @@
             },
     		'iframe': {'scrolling': 'no'}
 		});	
-        
-//        $('.fancybox').colorbox({
-//            padding:0, margin:0 ,background: 'none',
-//    		'type': 'iframe', 
-//    		'scrolling': 'no',  
-//            'afterClosed': function(){
-//                parent.location.reload(true); 
-//                 $.colorbox.close();
-//            },
-//    		'iframe': {'scrolling': 'no'}
-//		});	
+
         
 	});  
     
-//    $(document).ready(function() {
-// $("#top-login-button").click(function() {
-//  $.fancybox({
-//   href : "#login_form",
-//   padding : 0,
-//   // it was onClosed for v1.3.4
-//   afterClose : function(){
-//    $("#login_error").hide();
-//   }
-//  }); // fancybox
-// }); //click
-//
-// $("#login_form_ajax").bind("submit", function() {
-//  if ($("#login_name").val().length < 1 || $("#login_pass").val().length < 1) {
-//   $("#login_error").show();
-//   $.fancybox.update(); // it was $.fancybox.resize(); for v1.3.4
-//   return false;
-//  }
-//  $.fancybox.showLoading(); // it was $.fancybox.showActivity(); for v1.3.4
-//  $.ajax({
-//   type   : "POST",
-//   cache  : false,
-//   url    : "/login.php",
-//   data   : $(this).serializeArray(),
-//   success: function(data) {
-//    $.fancybox(data);
-//   }
-//  });
-//  return false;
-// }); // bind
-//}); // ready
-    
-    
-//	$(function(){
-//	  $.scrollIt();
-//	});
   </script>
 	
 	<body>	

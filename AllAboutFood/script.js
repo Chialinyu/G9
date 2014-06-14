@@ -56,8 +56,7 @@ function clickFBLogin(){
                     });
                     
                     alert("used to login before~~~~~");
-                    $.fancybox.close();
-                    
+                    parent.$.fancybox.close();                      
                 },
                 error: function () {
                     // error is an instance of Parse.Error.
@@ -128,7 +127,5 @@ function FacebookLogin() {
 
 $('.click').click(function(){
 //    alert(try);
-//    $.fancybox.close();
     parent.$.fancybox.close();
-//    $.colorbox.close();
 })
