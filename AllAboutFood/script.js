@@ -129,3 +129,4 @@ function FacebookLogin() {
 $('.click').click(function(){
     alert("hi");
     $.fancybox.close();
+})
