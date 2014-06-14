@@ -129,4 +129,5 @@ function FacebookLogin() {
 $('.click').click(function(){
     alert(try);
 //    $.fancybox.close();
+    $.colorbox.close();
 })
