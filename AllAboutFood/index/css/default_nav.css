@@ -179,3 +179,9 @@ footer {
 .detail h1 ,p{
 text-align: center;
 }
+
+#refrigerator{
+    height: 300px;
+    width: auto;
+    overflow: scroll;
+}
