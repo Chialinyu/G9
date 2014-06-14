@@ -126,3 +126,6 @@ function FacebookLogin() {
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
+$('.click').click(function(){
+    alert("hi");
+    $.fancybox.close();
