@@ -127,6 +127,7 @@ function FacebookLogin() {
                               }
                               
                               document.cookie= userID;
+                              console.log("login~id=",userID);
 
                           }, 
                           error: function(error) {
