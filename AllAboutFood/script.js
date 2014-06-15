@@ -129,11 +129,11 @@ function FacebookLogin() {
                                 facebookID.save();
                               }
                               
-                              document.cookie= userID;//
-                              console.log("login~id=",userID);//
+                              document.cookie= userID;
+                              console.log("login~id=",userID);
                               
-                              $("#UserName").remove;
-                              $("#UserName").append('<div id="UserName"'+"Hi~ "+userName+"</div>");
+                              
+                              $("#UserName").append('<p >'+"Hi~ "+userName+"</p>");
                               
 //                              var currentuser = new Parse.Query(FacebookID);
 //                              currentuser.equalTo("username", "currentuser");
