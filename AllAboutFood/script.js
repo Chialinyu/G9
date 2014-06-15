@@ -110,7 +110,7 @@ function FacebookLogin() {
                               }
                               else{
                                 console.log("results=",results[0].id);  
-                                console.log("resultsobject=",results.objectid);
+                                console.log("results=",results);
                                 getpairinfo(userID);
                               }
                               document.cookie= userID;
