@@ -43,8 +43,8 @@ function reload(){
 
 function clickFBLogin(){
 //    document.getElementById("fb_logout").style.display='none';
-    $("#fb_logout").hide();
-    console.log("hide");
+//    $("#fb_logout").hide();
+//    console.log("hide");
     
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
@@ -68,7 +68,7 @@ function clickFBLogin(){
                         var username = e.get('username');
                     });
                     
-                    $("#fb_logout").show();
+//                    $("#fb_logout").show();
                     parent.$.fancybox.close();                      
                 },
                 error: function () {
@@ -77,25 +77,25 @@ function clickFBLogin(){
                 }
             });
             
-//                    document.getElementById("nav_login").text()="Log out";//  
-                    parent.$("#nav_login").remove();//parent?
-                    console.log("remove");
-//                    $("#nav_login").val('Log out');//////////////
-                    $("#nav_login").prev("span").attr("nav_login","nav_logout"); /////////
+////                    document.getElementById("nav_login").text()="Log out";//  
+//                    parent.$("#nav_login").remove();//parent?
+//                    console.log("remove");
+////                    $("#nav_login").val('Log out');//////////////
+//                    $("#nav_login").prev("span").attr("nav_login","nav_logout"); /////////
             
             
         } else if (response.status === 'not_authorized') {
             console.log("no authorized!!");
 //            document.getElementById("fb_login").style.display='none';
 //            document.getElementById("fb_logout").style.display='block';
-            $("#fb_logout").hide();//
+//            $("#fb_logout").hide();//
             FacebookLogin();
                
             
         } else {
             console.log("not login yet!!");
             // the user isn't logged in to Facebook.
-            $("#fb_logout").hide();//
+//            $("#fb_logout").hide();//
 //            document.getElementById("fb_login").style.display='block';
 //            document.getElementById("fb_logout").style.display='none';
             FacebookLogin();
