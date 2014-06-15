@@ -394,7 +394,8 @@
 //                    
 //                }
 //                times++;
-                myArray=$("#refrigerator .box").html();
+                myArray.push($("#refrigerator .box").html());
+                
                 console.log("array=",myArray);
                 
                 var content = $(this).html();
