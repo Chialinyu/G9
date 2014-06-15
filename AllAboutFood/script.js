@@ -44,6 +44,7 @@ function reload(){
 function clickFBLogin(){
 //    document.getElementById("fb_logout").style.display='none';
     $("#fb_logout").hide();
+    console.log("hide");
     
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
@@ -69,6 +70,7 @@ function clickFBLogin(){
                     
 //                    document.getElementById("nav_login").text()="Log out";//  
                     $("#nav_login").remove();
+                    console.log("remove");
 //                    $("#nav_login").val('Log out');//////////////
                     $("#nav_login").prev("span").attr("nav_login","nav_logout"); /////////
                     
