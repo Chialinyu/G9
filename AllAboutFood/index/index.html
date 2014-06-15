@@ -152,9 +152,9 @@
 												<ul>
 													<li><a href="#">飯</a></li>
 													<li><a href="#">糙米</a></li>
-													<li><a href="#">醋飯</a></li>
+													<li><a href="#">胚芽米</a></li>
 													<li><a href="#">紫米飯</a></li>
-													<li><a href="#">拌飯</a></li>
+													<li><a href="#">五穀米</a></li>
 												</ul>
 											</div>
 										</li>
@@ -375,9 +375,16 @@
             
             //choose~~in~~box~~
             var searchInput = "";
+            var times = 0;
             $('#Meat li a').click(function(){
+                for(var i = 0; i <= time;i++){
+                    
+                }
+                times++;
+                
                 var content = $(this).html();
                 console.log(content);
+                
                 $('#refrigerator').append('<div class="box" value='+ content +">"+content+"</div>");
                 searchInput += content + " ";
                 //

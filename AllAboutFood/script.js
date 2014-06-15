@@ -84,8 +84,7 @@ function FacebookLogin() {
                         var userName = response.name;   
                         var userID = response.id;
                         var FacebookID = Parse.Object.extend("FacebookID");
-//                        console.log('Good to see you, ' + response.name + '.');
-//                        var FacebookID = Parse.Object.extend("FacebookID");
+                        console.log('Good to see you, ' + response.name + '.');
                         var query = new Parse.Query(FacebookID);
                         query.equalTo("userID", userID);//
                         query.find({
@@ -105,7 +104,7 @@ function FacebookLogin() {
             });
             $('.info').html('Wait we\'ll sent you back....');
             setTimeout(function () {
-                window.location.reload();
+                parent.window.location.reload();
             }, 2000); // little hack for allow api to fetch data alittle bit longer
         }
     }, {
