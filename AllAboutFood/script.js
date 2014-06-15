@@ -68,7 +68,7 @@ function clickFBLogin(){
                     });
                     
 //                    document.getElementById("nav_login").text()="Log out";//  
-                    $("#nav_login").cal('Log out');//////////////
+                    $("#nav_login").val('Log out');//////////////
                     $("#nav_login").prev("span").attr("nav_login","nav_logout"); /////////
                     
                     parent.$.fancybox.close();                      
