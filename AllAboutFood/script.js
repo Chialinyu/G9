@@ -74,14 +74,13 @@ function clickFBLogin(){
         } else if (response.status === 'not_authorized') {
             console.log("no authorized!!");
            FacebookLogin();
-            parent.$.fancybox.close();
             
             
         } else {
             console.log("not login yet!!");
             // the user isn't logged in to Facebook.
             FacebookLogin();
-            parent.$.fancybox.close();
+
         }
     });
 }
