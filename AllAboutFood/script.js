@@ -42,9 +42,22 @@ function reload(){
 }
 
 function clickFBLogin(){
+//    document.getElementById("fb_logout").style.display='none';
+//    $("#fb_logout").hide();
+//    console.log("hide");
+    
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
             console.log("connected!!");
+            
+//            document.getElementById("fb_login").style.display='none';
+//            document.getElementById("fb_logout").style.display='block';
+            
+            
+            document.cookie = response.authResponse.userID;
+            console.log("js_id=",response.authResponse.userID);
+            console.log("js_cookie=",document.cookie);
+            
             var FacebookID = Parse.Object.extend("FacebookID");//class
             var query2 = new Parse.Query(FacebookID);
             
@@ -55,7 +68,7 @@ function clickFBLogin(){
                         var username = e.get('username');
                     });
                     
-                    alert("used to login before~~~~~");
+//                    $("#fb_logout").show();
                     parent.$.fancybox.close();                      
                 },
                 error: function () {
@@ -63,14 +76,30 @@ function clickFBLogin(){
                     alert("error~~~~~");
                 }
             });
+            
+////                    document.getElementById("nav_login").text()="Log out";//  
+//                    parent.$("#nav_login").remove();//parent?
+//                    console.log("remove");
+////                    $("#nav_login").val('Log out');//////////////
+//                    $("#nav_login").prev("span").attr("nav_login","nav_logout"); /////////
+            
+            
         } else if (response.status === 'not_authorized') {
             console.log("no authorized!!");
-           FacebookLogin();
+//            document.getElementById("fb_login").style.display='none';
+//            document.getElementById("fb_logout").style.display='block';
+//            $("#fb_logout").hide();//
+            FacebookLogin();
+               
             
         } else {
             console.log("not login yet!!");
             // the user isn't logged in to Facebook.
+//            $("#fb_logout").hide();//
+//            document.getElementById("fb_login").style.display='block';
+//            document.getElementById("fb_logout").style.display='none';
             FacebookLogin();
+
         }
     });
 }
@@ -78,14 +107,15 @@ function clickFBLogin(){
 //LOGIN Fix
 
 function FacebookLogin() {
+//    deleteAllCookies();
     FB.login(function (response) {
         if (response.authResponse) {
             FB.api('/me', function (response) {
                         var userName = response.name;   
                         var userID = response.id;
                         var FacebookID = Parse.Object.extend("FacebookID");
-//                        console.log('Good to see you, ' + response.name + '.');
-//                        var FacebookID = Parse.Object.extend("FacebookID");
+                        console.log('Good to see you, ' + response.name + '.');
+                
                         var query = new Parse.Query(FacebookID);
                         query.equalTo("userID", userID);//
                         query.find({
@@ -97,16 +127,10 @@ function FacebookLogin() {
                                 facebookID.set("userID",userID);
                                 facebookID.save();
                               }
-                              var currentuser = new Parse.Query(FacebookID);
-                              currentuser.equalTo("username", "currentuser");
-                              currentuser.find({
-                                success: function(a){
-                                    currentuser.set("userID",userID);
-                                }
-                               , error:function(b){
-                                    
-                                }
-                              });
+                              
+                              document.cookie= userID;
+                              console.log("login~id=",userID);
+
                           }, 
                           error: function(error) {
                             alert("Error: " + error.code + " " + error.message);
@@ -116,11 +140,34 @@ function FacebookLogin() {
             $('.info').html('Wait we\'ll sent you back....');
             setTimeout(function () {
                 parent.window.location.reload();
-            }, 2000); // little hack for allow api to fetch data alittle bit longer
+            }, 500); // little hack for allow api to fetch data alittle bit longer
         }
     }, {
         scope: 'user_likes'
+    }); 
+}
+
+function FacebookLogout() {
+    FB.getLoginStatus(function(response) {
+        if (response && response.status === 'connected') {
+            FB.logout(function(response) {
+                parent.document.location.reload();
+            });
+        }
     });
+    deleteAllCookies();
+//    parent.$.fancybox.close(); 
+}
+
+function deleteAllCookies() {
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+    	var cookie = cookies[i];
+    	var eqPos = cookie.indexOf("=");
+    	var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+//    	document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
 }
 
 //LOAD FACEBOOK SDK ASYNC，這是基本的東西，應該不用多說了吧
