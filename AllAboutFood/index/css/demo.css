@@ -238,3 +238,9 @@ footer {
 .gsc-input{
     display: none;
 }
+
+#UserName{
+    display: block;
+    height: 40px;
+    font-size: 20px;
+}
