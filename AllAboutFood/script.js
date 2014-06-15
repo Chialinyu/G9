@@ -63,6 +63,7 @@ function clickFBLogin(){
                     alert("error~~~~~");
                 }
             });
+            FacebookLogin();
         } else if (response.status === 'not_authorized') {
             console.log("no authorized!!");
            FacebookLogin();
