@@ -109,8 +109,8 @@ function FacebookLogin() {
                                 facebookID.save();
                               }
                               else{
-                                  
-                                console.log("results=",results.id);
+                                console.log("results=",results);  
+                                console.log("resultsobject=",results.objectid);
                                 getpairinfo(userID);
                               }
                               document.cookie= userID;
