@@ -53,10 +53,10 @@ function clickFBLogin(){
                     results.forEach(function (e) {
                         var fbid = e.get("userID");
                         var username = e.get('username');
+                        document.cookie= fbid;//
+                        console.log("used to login before~id:",fbid);
+                        
                     });
-                    
-                    document.cookie= fbid;
-                   console.log("used to login before~id:",fbid);
                     parent.$.fancybox.close();                      
                 },
                 error: function () {
@@ -127,6 +127,7 @@ function FacebookLogout() {
             });
         }
     });
+    deleteAllCookies();
 }
 
 function deleteAllCookies() {
