@@ -172,7 +172,7 @@ function deleteAllCookies() {
 				  	//querypair.refresh();
 				  	console.log(user.get("ingredient"));
 				  	var obj = user.get("ingredient").split(",");
-				  	for(var i=1; i<obj.length; i=i+2){
+				  	for(var i=0; i<obj.length; i=i+2){
 				  		//console.log( (parseInt(obj[i],10)) );
 				  		console.log("obj" + obj[i] );
                         $('#refrigerator').append('<div class="box" value="object" >'+obj[i]+"</div>");
