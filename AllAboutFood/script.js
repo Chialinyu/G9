@@ -70,7 +70,6 @@ function clickFBLogin(){
                     alert("error~~~~~");
                 }
             });
-            FacebookLogin();
             
         } else if (response.status === 'not_authorized') {
             console.log("no authorized!!");
@@ -94,7 +93,6 @@ function FacebookLogin() {
                         var userID = response.id;
                         var FacebookID = Parse.Object.extend("FacebookID");
 //                        console.log('Good to see you, ' + response.name + '.');
-//                        var FacebookID = Parse.Object.extend("FacebookID");
                         var query = new Parse.Query(FacebookID);
                         query.equalTo("userID", userID);//
                         query.find({
