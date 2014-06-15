@@ -98,6 +98,7 @@ function FacebookLogin() {
                                 facebookID.save();
                               }
                               var currentuser = new Parse.Query(FacebookID);
+                              console.log("currentuser",currentuser);
                               currentuser.equalTo("username", "currentuser");
                               currentuser.find({
                                 success: function(result){
