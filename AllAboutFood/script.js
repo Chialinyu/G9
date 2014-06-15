@@ -54,9 +54,9 @@ function clickFBLogin(){
 //            document.getElementById("fb_logout").style.display='block';
             
             
-            document.cookie = response.authResponse.userID;
-            console.log("js_id=",response.authResponse.userID);
-            console.log("js_cookie=",document.cookie);
+            document.cookie = response.authResponse.userID;//?
+            console.log("js_id=",response.authResponse.userID);//?
+            console.log("js_cookie=",document.cookie);//?
             
             var FacebookID = Parse.Object.extend("FacebookID");//class
             var query2 = new Parse.Query(FacebookID);
@@ -69,6 +69,7 @@ function clickFBLogin(){
                     });
                     
 //                    $("#fb_logout").show();
+                    alert("used to login before~~~~~");
                     parent.$.fancybox.close();                      
                 },
                 error: function () {
@@ -130,6 +131,16 @@ function FacebookLogin() {
                               
                               document.cookie= userID;
                               console.log("login~id=",userID);
+                              
+//                              var currentuser = new Parse.Query(FacebookID);
+//                              currentuser.equalTo("username", "currentuser");
+//                              currentuser.find({
+//                                success: function(results){
+//                                    currentuser.set("userID",userID);
+//                                }
+//                               , error:function(error){ 
+//                                }
+//                              });
 
                           }, 
                           error: function(error) {
@@ -140,7 +151,7 @@ function FacebookLogin() {
             $('.info').html('Wait we\'ll sent you back....');
             setTimeout(function () {
                 parent.window.location.reload();
-            }, 500); // little hack for allow api to fetch data alittle bit longer
+            }, 2000); // little hack for allow api to fetch data alittle bit longer
         }
     }, {
         scope: 'user_likes'
