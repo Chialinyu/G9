@@ -4,7 +4,7 @@
 	background-color: #F1CF89;
 }*/
 
-.LoginPageStyle section {	
+.login_section section {	
 	height: 396px;
 	width: 700px;
 	background-color: #F1CF89;
@@ -19,7 +19,7 @@
 
 }
 
-.LoginPageStyle h2 {
+ .h2_style h2 {
 	text-align: center;
 	font-size: 2.5em ;
 	margin: 0px ;
@@ -27,7 +27,7 @@
 	padding-bottom: 20px;
 }
 
-.LoginPageStyle form{
+  .form_style form{
 	font-size: 1em ;
 	text-align: left;
 	float: left;
@@ -35,7 +35,7 @@
 	margin-top: 10px;
 }
 
-.LoginPageStyle input{
+  #login_name,#login_pass input{
 	height: 53px;
 	width: 300px;
 	-webkit-border-radius: 10px;
@@ -47,24 +47,24 @@
 
 
 
-.LoginPageStyle #login_link {
+ #login_link {
 	clear:right;
 	margin-top: 15px;
 
 }
 
-.LoginPageStyle #login_link a {
+ #login_link a {
 	display: inline-block;
 	padding: 15px;
 }
 
-.LoginPageStyle .icon{
+ .icon_style{
 	height: 25px;
 	width: 25px;
 	vertical-align: middle;
 }
 
-.LoginPageStyle #fb_login{	
+  #fb_login{	
 	height: 53px;
 	width: 286px;
 	border: none ;
@@ -73,12 +73,12 @@
 	margin-left: 150px;
 }
 
-.LoginPageStyle #fb_login img{
+ #fb_login img{
 	height: 53px;
 	width: 286px;	
 }
 
-.LoginPageStyle #login{	
+ #login_bt,#fb_logout{	
 	height: 53px;
 	width: 136px;
 	border: none ;
@@ -86,12 +86,12 @@
 	margin-top: 5px;
 }
 
-.LoginPageStyle #login_bt img{
+  #login_bt,#fb_logout img{
 	height: 53px;
 	width: 136px;	
 }
 
-.LoginPageStyle #sign_up {
+ #sign_up {
 	height: 53px;
 	width: 136px;
 	background-color: #423E4C;
