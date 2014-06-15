@@ -55,7 +55,7 @@ function clickFBLogin(){
                         var username = e.get('username');
                     });
                     
-                    alert("used to login before~~~~~");
+                   console.log("used to login before~~~~~");
                     parent.$.fancybox.close();                      
                 },
                 error: function () {
@@ -84,7 +84,8 @@ function FacebookLogin() {
                         var userName = response.name;   
                         var userID = response.id;
                         var FacebookID = Parse.Object.extend("FacebookID");
-                        console.log('Good to see you, ' + response.name + '.');
+//                        console.log('Good to see you, ' + response.name + '.');
+//                        var FacebookID = Parse.Object.extend("FacebookID");
                         var query = new Parse.Query(FacebookID);
                         query.equalTo("userID", userID);//
                         query.find({
@@ -95,7 +96,17 @@ function FacebookLogin() {
                                 facebookID.set("username",userName);
                                 facebookID.set("userID",userID);
                                 facebookID.save();
-                              }   
+                              }
+                              var currentuser = new Parse.Query(FacebookID);
+                              currentuser.equalTo("username", "currentuser");
+                              currentuser.find({
+                                success: function(a){
+                                    currentuser.set("userID",userID);
+                                }
+                                error:function(b){
+                                    
+                                }
+                              });
                           }, 
                           error: function(error) {
                             alert("Error: " + error.code + " " + error.message);
