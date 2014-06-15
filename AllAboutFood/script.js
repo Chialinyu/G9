@@ -101,19 +101,21 @@ function FacebookLogin() {
                         query.equalTo("userID", userID);//
                         query.find({
                           success: function(results) {
-                              console.log(results.length);
+                              console.log("results.length",results.length);
                               if (results.length === 0){//沒有資料回傳
                                 var facebookID = new FacebookID();//不用自己手動建class
                                 facebookID.set("username",userName);
                                 facebookID.set("userID",userID);
                                 facebookID.save();
                               }
-                              
+                              else{
+                                getpairinfo();
+                              }
                               document.cookie= userID;
                               console.log("login~id=",userID);
                               
                               $("#UserName").empty();
-                              $("#UserName").append("Hi~ "+userName);//
+                              $("#UserName").append("Hi~ "+userName);//append User Name
 
                           }, 
                           error: function(error) {
@@ -154,6 +156,36 @@ function deleteAllCookies() {
 //    	document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
 }
+
+//        <script>
+			function getpairinfo(){
+//				Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
+
+				var currentuser = Parse.Object.extend("FacebookID");//include class
+                console.log("i m in getFun I m=",currentuser);
+				var querypair = new Parse.Query(currentuser);//對class做搜尋
+				//querypair.refresh();
+				querypair.get("KtnMfQB8JL", { //objectid
+				  success: function(user) {
+				  	//user = unsynuser.fetch();
+				  	//querypair.refresh();
+				  	console.log(user.get("ingredient"));
+				  	var obj = user.get("ingredient").split(",");
+				  	for(var i=1; i<obj.length; i=i+2){
+				  		//console.log( (parseInt(obj[i],10)) );
+				  		console.log("obj" + obj[i] );
+				  	}
+				  	
+				  },
+				  error: function(object, error) {
+				  	console.log("nonono");
+				    
+				  }
+				});
+				
+			}
+//		</script>
+
 
 //LOAD FACEBOOK SDK ASYNC，這是基本的東西，應該不用多說了吧
 (function (d, s, id) {
