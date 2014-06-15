@@ -133,7 +133,7 @@ function FacebookLogin() {
                               console.log("login~id=",userID);
                               
                               $("#UserName").empty();
-                              $("#UserName").append("Hi~ "+userName);
+                              $("#UserName").append("Hi~ "+userName);//
                               
 //                              var currentuser = new Parse.Query(FacebookID);
 //                              currentuser.equalTo("username", "currentuser");
