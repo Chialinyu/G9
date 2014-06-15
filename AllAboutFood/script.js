@@ -133,7 +133,7 @@ function FacebookLogout() {
             });
         }
     });
-    
+    parent.$.fancybox.close(); 
 }
 
 function deleteAllCookies() {
