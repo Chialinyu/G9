@@ -129,8 +129,8 @@ function FacebookLogin() {
                                 facebookID.save();
                               }
                               
-                              document.cookie= userID;
-                              console.log("login~id=",userID);
+                              document.cookie= userID;//
+                              console.log("login~id=",userID);//
                               
                               $("#UserName").remove;
                               $("#UserName").append('<div id="UserName"'+"Hi~ "+userName+"</div>");
