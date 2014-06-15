@@ -196,4 +196,5 @@ function deleteAllCookies() {
 
 function testshow(){
 $("#UserName").append('<p>'+'哈哈哈哈哈'+'</p>');
+    console.log("Hi");
 }
