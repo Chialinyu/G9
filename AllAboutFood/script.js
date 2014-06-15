@@ -195,5 +195,5 @@ function deleteAllCookies() {
 }(document, 'script', 'facebook-jssdk'));
 
 function testshow(){
-$("#UserName").append("aaaaaaaaaaaaaaaa");
+$("#UserName").append('<p>'+'哈哈哈哈哈'+'</p>');
 }
