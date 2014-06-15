@@ -151,7 +151,8 @@ function FacebookLogin() {
             });
             $('.info').html('Wait we\'ll sent you back....');
             setTimeout(function () {
-                window.location.reload();//parent
+//                window.location.reload();//parent
+                $.fancybox.close();
             }, 2000); // little hack for allow api to fetch data alittle bit longer
         }
     }, {
