@@ -175,7 +175,7 @@ function deleteAllCookies() {
 				  	for(var i=1; i<obj.length; i=i+2){
 				  		//console.log( (parseInt(obj[i],10)) );
 				  		console.log("obj" + obj[i] );
-                        $('#refrigerator').append('<div class="box" value='+ object +">"+obj[i]+"</div>");
+                        $('#refrigerator').append('<div class="box" value='+ content +">"+obj[i]+"</div>");
 				  	}
 				  	
 				  },
