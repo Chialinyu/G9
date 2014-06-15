@@ -410,7 +410,8 @@
 
 				var currentuser = Parse.Object.extend("FacebookID");//include class
 				var query = new Parse.Query(currentuser);//對class做搜尋
-				query.equalTo("userID","814579645218777");
+				query.equalTo("userID",arrCookie[0]);
+                console.log("arr=",arrCookie[0]);
 				var ans = 0;
 				//var d = new Date(year, month, day, hours, minutes, seconds, milliseconds);
 				//query.id = "DZZVW4YIDM";
