@@ -42,14 +42,14 @@ function reload(){
 }
 
 function clickFBLogin(){
-    document.getElementById("fb_logout").style.display='none';
+//    document.getElementById("fb_logout").style.display='none';
     
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
             console.log("connected!!");
             
-            document.getElementById("fb_login").style.display='none';
-            document.getElementById("fb_logout").style.display='block';
+//            document.getElementById("fb_login").style.display='none';
+//            document.getElementById("fb_logout").style.display='block';
             
             document.cookie = response.authResponse.userID;
             console.log("id=",response.authResponse.userID);
@@ -65,9 +65,7 @@ function clickFBLogin(){
                         var username = e.get('username');
                     });
                     
-//                    document.cookie= fbid;//
-//                    console.log("used to login before~id:",fbid);
-                        
+                    document.getElementById("nav_login").val()="Log out";    
                     parent.$.fancybox.close();                      
                 },
                 error: function () {
@@ -78,16 +76,16 @@ function clickFBLogin(){
             
         } else if (response.status === 'not_authorized') {
             console.log("no authorized!!");
-            document.getElementById("fb_login").style.display='none';
-            document.getElementById("fb_logout").style.display='block';
+//            document.getElementById("fb_login").style.display='none';
+//            document.getElementById("fb_logout").style.display='block';
             FacebookLogin();
                
             
         } else {
             console.log("not login yet!!");
             // the user isn't logged in to Facebook.
-            document.getElementById("fb_login").style.display='block';
-            document.getElementById("fb_logout").style.display='none';
+//            document.getElementById("fb_login").style.display='block';
+//            document.getElementById("fb_logout").style.display='none';
             FacebookLogin();
 
         }
