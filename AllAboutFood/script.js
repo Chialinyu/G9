@@ -43,6 +43,7 @@ function reload(){
 
 function clickFBLogin(){
 //    document.getElementById("fb_logout").style.display='none';
+    $("#fb_logout").hide();
     
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
@@ -50,6 +51,7 @@ function clickFBLogin(){
             
 //            document.getElementById("fb_login").style.display='none';
 //            document.getElementById("fb_logout").style.display='block';
+            $("#fb_logout").show();
             
             document.cookie = response.authResponse.userID;
             console.log("id=",response.authResponse.userID);
@@ -65,7 +67,10 @@ function clickFBLogin(){
                         var username = e.get('username');
                     });
                     
-                    document.getElementById("nav_login").text()="Log out";//    
+//                    document.getElementById("nav_login").text()="Log out";//  
+                    $("#nav_login").cal('Log out');//////////////
+                    $("#nav_login").prev("span").attr("nav_login","nav_logout"); /////////
+                    
                     parent.$.fancybox.close();                      
                 },
                 error: function () {
