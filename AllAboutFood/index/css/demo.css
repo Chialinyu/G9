@@ -240,7 +240,7 @@ footer {
 }
 
 #UserName{
-    display: block;
+    display: inline-block;
     height: 20px;
     font-size: 20px;
 }
