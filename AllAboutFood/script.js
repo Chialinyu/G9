@@ -124,6 +124,7 @@ function FacebookLogin() {
 }
 
 function FacebookLogout() {
+    deleteAllCookies();
     FB.getLoginStatus(function(response) {
         if (response && response.status === 'connected') {
             FB.logout(function(response) {
@@ -131,7 +132,7 @@ function FacebookLogout() {
             });
         }
     });
-    deleteAllCookies();
+    
 }
 
 function deleteAllCookies() {
