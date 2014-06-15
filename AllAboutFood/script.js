@@ -13,33 +13,13 @@ window.fbAsyncInit = function () {
 //        status     : true, // check login status
         cookie     : true // enable cookies to allow Parse to access the session
     });
-    
-//     Parse.FacebookUtils.init({
-//        appId      : '1515134405376425', // Facebook App ID
-//        channelUrl : 'http://chialinyu.github.io/G9/AllAboutFood/', // Channel File
-//        cookie     : true, // enable cookies to allow Parse to access the session
-//        xfbml      : true  // parse XFBML
-//     });
-//    
-//    Parse.FacebookUtils.logIn(null, {
-//          success: function(user) {
-//            if (!user.existed()) {
-//              alert("User signed up and logged in through Facebook!");
-//            } else {
-//              alert("User logged in through Facebook!");
-//            }
-//          },
-//          error: function(user, error) {
-//            alert("User cancelled the Facebook login or did not fully authorize.");
-//          }
-//        });
 
 }; //<<<<<<<<<<<<<<<init end    
 
-function reload(){
-            alert("Reload here!!");
-            window.location.reload();
-}
+//function reload(){
+//            alert("Reload here!!");
+//            window.location.reload();
+//}
 
 function clickFBLogin(){
 //    document.getElementById("fb_logout").style.display='none';
@@ -134,16 +114,6 @@ function FacebookLogin() {
                               
                               $("#UserName").empty();
                               $("#UserName").append("Hi~ "+userName);//
-                              
-//                              var currentuser = new Parse.Query(FacebookID);
-//                              currentuser.equalTo("username", "currentuser");
-//                              currentuser.find({
-//                                success: function(results){
-//                                    currentuser.set("userID",userID);
-//                                }
-//                               , error:function(error){ 
-//                                }
-//                              });
 
                           }, 
                           error: function(error) {
@@ -197,8 +167,3 @@ function deleteAllCookies() {
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-function testshow(){
-$("#UserName").append('<p>'+'哈哈哈哈哈'+'</p>');
-    
-    console.log("Hi");
-}
