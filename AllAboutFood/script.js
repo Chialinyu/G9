@@ -121,7 +121,7 @@ function FacebookLogin() {
     }, {
         scope: 'user_likes'
     });
-//    parent.$.fancybox.close(); 
+    parent.$.fancybox.close(); 
 }
 
 function FacebookLogout() {
