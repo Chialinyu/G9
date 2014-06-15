@@ -110,8 +110,8 @@ function FacebookLogin() {
                               }
                               else{
                                 console.log("results=",results[0].id);  
-                                console.log("results=",results);
-                                getpairinfo(userID);
+//                                console.log("results=",results);
+                                getpairinfo(results[0].id);
                               }
                               document.cookie= userID;
                               console.log("login~id=",userID);
@@ -160,14 +160,13 @@ function deleteAllCookies() {
 }
 
 //        <script>
-			function getpairinfo(FBuserID){
+			function getpairinfo(ObjectID){
 //				Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
 
 				var currentuser = Parse.Object.extend("FacebookID");//include class
 				var querypair = new Parse.Query(currentuser);//對class做搜尋
 				//querypair.refresh();
-                console.log("i m =",FBuserID);
-				querypair.get("KtnMfQB8JL", { //objectid
+				querypair.get(ObjectID, { //objectid
 				  success: function(user) {
 				  	//user = unsynuser.fetch();
 				  	//querypair.refresh();
@@ -176,6 +175,8 @@ function deleteAllCookies() {
 				  	for(var i=1; i<obj.length; i=i+2){
 				  		//console.log( (parseInt(obj[i],10)) );
 				  		console.log("obj" + obj[i] );
+                        $('#refrigerator').append('<div class="box" value='+ object +">"+object[i]+"</div>");
+                searchInput += content + " ";
 				  	}
 				  	
 				  },
