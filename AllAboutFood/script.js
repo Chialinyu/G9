@@ -103,7 +103,7 @@ function FacebookLogin() {
                                 success: function(a){
                                     currentuser.set("userID",userID);
                                 }
-                                error:function(b){
+                               , error:function(b){
                                     
                                 }
                               });
