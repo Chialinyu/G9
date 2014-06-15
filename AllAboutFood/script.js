@@ -55,7 +55,8 @@ function clickFBLogin(){
                         var username = e.get('username');
                     });
                     
-                   console.log("used to login before~~~~~");
+                    document.cookie= fbid;
+                   console.log("used to login before~id:",fbid);
                     parent.$.fancybox.close();                      
                 },
                 error: function () {
@@ -64,6 +65,7 @@ function clickFBLogin(){
                 }
             });
             FacebookLogin();
+            
         } else if (response.status === 'not_authorized') {
             console.log("no authorized!!");
            FacebookLogin();
@@ -115,6 +117,27 @@ function FacebookLogin() {
     }, {
         scope: 'user_likes'
     });
+}
+
+function FacebookLogout() {
+    FB.getLoginStatus(function(response) {
+        if (response && response.status === 'connected') {
+            FB.logout(function(response) {
+                document.location.reload();
+            });
+        }
+    });
+}
+
+function deleteAllCookies() {
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+    	var cookie = cookies[i];
+    	var eqPos = cookie.indexOf("=");
+    	var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+//    	document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
 }
 
 //LOAD FACEBOOK SDK ASYNC，這是基本的東西，應該不用多說了吧
