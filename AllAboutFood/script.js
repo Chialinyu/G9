@@ -42,6 +42,8 @@ function reload(){
 }
 
 function clickFBLogin(){
+    document.getElementById("fb_logout").style.display='none';
+    
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
             console.log("connected!!");
