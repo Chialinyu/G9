@@ -107,14 +107,14 @@ function clickFBLogin(){
 //LOGIN Fix
 
 function FacebookLogin() {
-    deleteAllCookies();
+//    deleteAllCookies();
     FB.login(function (response) {
         if (response.authResponse) {
             FB.api('/me', function (response) {
                         var userName = response.name;   
                         var userID = response.id;
                         var FacebookID = Parse.Object.extend("FacebookID");
-//                        console.log('Good to see you, ' + response.name + '.');
+                        console.log('Good to see you, ' + response.name + '.');
                         var query = new Parse.Query(FacebookID);
                         query.equalTo("userID", userID);//
                         query.find({
