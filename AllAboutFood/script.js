@@ -69,7 +69,7 @@ function clickFBLogin(){
                     });
                     
 //                    document.getElementById("nav_login").text()="Log out";//  
-                    $("#nav_login").remove();
+                    parent.$("#nav_login").remove();//parent?
                     console.log("remove");
 //                    $("#nav_login").val('Log out');//////////////
                     $("#nav_login").prev("span").attr("nav_login","nav_logout"); /////////
