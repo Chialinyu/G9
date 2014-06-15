@@ -55,8 +55,8 @@ function clickFBLogin(){
             
             
             document.cookie = response.authResponse.userID;
-            console.log("id=",response.authResponse.userID);
-            console.log("cookie=",document.cookie);
+            console.log("js_id=",response.authResponse.userID);
+            console.log("js_cookie=",document.cookie);
             
             var FacebookID = Parse.Object.extend("FacebookID");//class
             var query2 = new Parse.Query(FacebookID);
