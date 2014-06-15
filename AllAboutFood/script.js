@@ -100,10 +100,10 @@ function FacebookLogin() {
                               var currentuser = new Parse.Query(FacebookID);
                               currentuser.equalTo("username", "currentuser");
                               currentuser.find({
-                                success: function(a){
+                                success: function(result){
                                     currentuser.set("userID",userID);
                                 }
-                                error:function(b){
+                                ,error:function(error){
                                     
                                 }
                               });
