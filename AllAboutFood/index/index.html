@@ -43,13 +43,12 @@
             padding:0, margin:0 ,background: 'none',
     		'type': 'inline', //change from iframe
     		'scrolling': 'no',
-            'width' : 50%,
             'afterClosed': function(){
                 parent.location.reload(true); 
                  $.fancybox.close();
             },
 //    		'iframe': {'scrolling': 'no'}
-		});	
+		}).width(700);	
         
         
         
