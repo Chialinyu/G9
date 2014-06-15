@@ -105,7 +105,7 @@ function FacebookLogin() {
                                     currentuser.set("userID",userID);
                                 }
                                 ,error:function(error){
-                                    
+                                    console.log("error~~~~~~");
                                 }
                               });
                           }, 
