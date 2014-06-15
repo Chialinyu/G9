@@ -109,7 +109,7 @@ function FacebookLogin() {
                                 facebookID.save();
                               }
                               else{
-                                console.log("results=",results);  
+                                console.log("results=",results[0].id);  
                                 console.log("resultsobject=",results.objectid);
                                 getpairinfo(userID);
                               }
