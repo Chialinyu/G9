@@ -45,6 +45,11 @@ function clickFBLogin(){
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
             console.log("connected!!");
+            
+            document.cookie = response.authResponse.userID;
+            console.log("id=",response.authResponse.userID);
+            console.log("cookie=",document.cookie);
+            
             var FacebookID = Parse.Object.extend("FacebookID");//class
             var query2 = new Parse.Query(FacebookID);
             
@@ -53,10 +58,11 @@ function clickFBLogin(){
                     results.forEach(function (e) {
                         var fbid = e.get("userID");
                         var username = e.get('username');
-                        document.cookie= fbid;//
-                        console.log("used to login before~id:",fbid);
-                        
                     });
+                    
+//                    document.cookie= fbid;//
+//                    console.log("used to login before~id:",fbid);
+                        
                     parent.$.fancybox.close();                      
                 },
                 error: function () {
