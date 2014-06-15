@@ -131,7 +131,9 @@ function FacebookLogin() {
                               
                               document.cookie= userID;
                               console.log("login~id=",userID);
-                              $("#UserName").append('<p >'+"Hi~ "+userName+"</p>");
+                              
+                              $("#UserName").remove;
+                              $("#UserName").append('<div id="UserName"'+"Hi~ "+userName+"</div>");
                               
 //                              var currentuser = new Parse.Query(FacebookID);
 //                              currentuser.equalTo("username", "currentuser");
