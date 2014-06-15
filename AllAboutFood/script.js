@@ -63,7 +63,7 @@ function clickFBLogin(){
 //                    document.cookie= fbid;//
 //                    console.log("used to login before~id:",fbid);
                         
-                    parent.$.fancybox.close();                      
+//                    parent.$.fancybox.close();                      
                 },
                 error: function () {
                     // error is an instance of Parse.Error.
@@ -75,12 +75,14 @@ function clickFBLogin(){
             console.log("no authorized!!");
            FacebookLogin();
             
+            
         } else {
             console.log("not login yet!!");
             // the user isn't logged in to Facebook.
             FacebookLogin();
         }
     });
+    parent.$.fancybox.close();
 }
 
 //LOGIN Fix
@@ -120,8 +122,7 @@ function FacebookLogin() {
         }
     }, {
         scope: 'user_likes'
-    });
-    parent.$.fancybox.close(); 
+    }); 
 }
 
 function FacebookLogout() {
