@@ -235,3 +235,6 @@ footer {
     font-size: 26px; 
 }
 
+.gsc-input{
+    display: none;
+}
