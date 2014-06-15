@@ -21,6 +21,7 @@
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<link rel="stylesheet" type="text/css" href="css/default_nav.css" />
 		<link rel="stylesheet" type="text/css" href="css/component_nav.css" />
+        <link rel="stylesheet" type="text/css" href="css/googlesearch.css" />
 		<script src="js/modernizr.nav.js"></script>
 		<script src="js/modernizr.push.js"></script>
         <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
@@ -39,13 +40,13 @@
 	
 		$('.fancybox').fancybox({
             padding:0, margin:0 ,background: 'none',
-    		'type': 'iframe', 
+    		'type': 'inline', //change from iframe
     		'scrolling': 'no',  
             'afterClosed': function(){
                 parent.location.reload(true); 
                  $.fancybox.close();
             },
-    		'iframe': {'scrolling': 'no'}
+//    		'iframe': {'scrolling': 'no'}
 		});	
         
         
@@ -96,7 +97,8 @@
 							</a>
 						</li>
 						<li>
-							<a class="fancybox fancybox.iframe"  href="../Login.html"  >
+<!--							<a class="fancybox fancybox.iframe"  href="../Login.html"  >-->
+                            <a class="fancybox fancybox.inline"  href="../Login.html"  >    
 								<span class="icon_nav icon">
 									<i aria-hidden="true" class="icon-team"></i>
 								</span>
@@ -308,7 +310,8 @@
                                 <div>
                                 <script>
                                   (function() {
-                                    var cx = '017594238628882870196:sqgbncmeimi';
+//                                    var cx = '017594238628882870196:sqgbncmeimi';
+                                    var cx = '004612734618331306887:e8s8iujgqtm';  
                                     var gcse = document.createElement('script');
                                     gcse.type = 'text/javascript';
                                     gcse.async = true;
@@ -429,6 +432,44 @@
             })
 
 		</script>
+        
+        
+        //Login.html
+        <div id="login" style="display:none">
+        <link href="../FOOD_files/login_css.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <div id="fb-root"></div>
+
+        <section>
+            <h2>LOG IN</h2>
+            <form>
+                <img src='../FOOD_files/user_circle.png' class="icon">&nbsp USERNAME<input type="text" id="login_name" name="username" placeholder="Type your username"><br>
+                <img src='../FOOD_files/lock.png' class="icon">PASSWORD<input type="text" id="login_pass" placeholder="Type your password">
+            </form>
+            <div id="login_link">
+                <a><img src='../FOOD_files/question.png' class="icon">LOST PASSWORD?</a><br>         
+                <a><img src='../FOOD_files/heart.png' class="icon">NEW ACCOUNT</a><br>
+                <a><img src='../FOOD_files/question.png' class="icon">HELP</a>
+            </div>
+<!--
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                </fb:login-button>
+-->
+            <button  id="fb_login" onclick="clickFBLogin()"><img src='../FOOD_files/loginfacebook.png' alt="Facebook Login"></button>
+            <button  id="login" ><img src='../FOOD_files/login.png' alt="Login" /></button>
+<!--        <button class="click">123</button>-->
+
+        </section>
+              <!--匯入Parse SDK-->
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+        <script type="text/javascript" src="../script.js"></script>
+<!--    <script type="text/javascript" src="./fb_prase.js"></script>-->
+
+        </div>
+        
+        
+        
+        
         
 		 <footer>
         <hr>
