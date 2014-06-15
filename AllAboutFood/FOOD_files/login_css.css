@@ -4,7 +4,7 @@
 	background-color: #F1CF89;
 }*/
 
-.login_section section {	
+.login_section {	
 	height: 396px;
 	width: 700px;
 	background-color: #F1CF89;
@@ -19,7 +19,7 @@
 
 }
 
- .h2_style h2 {
+ .h2_style {
 	text-align: center;
 	font-size: 2.5em ;
 	margin: 0px ;
@@ -27,7 +27,7 @@
 	padding-bottom: 20px;
 }
 
-  .form_style form{
+  .form_style {
 	font-size: 1em ;
 	text-align: left;
 	float: left;
@@ -35,7 +35,7 @@
 	margin-top: 10px;
 }
 
-  #login_name,#login_pass input{
+  #login_name,#login_pass {
 	height: 53px;
 	width: 300px;
 	-webkit-border-radius: 10px;
@@ -86,7 +86,7 @@
 	margin-top: 5px;
 }
 
-  #login_bt,#fb_logout img{
+#login_bt,#fb_logout img{
 	height: 53px;
 	width: 136px;	
 }
