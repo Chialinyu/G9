@@ -68,12 +68,6 @@ function clickFBLogin(){
                         var username = e.get('username');
                     });
                     
-//                    document.getElementById("nav_login").text()="Log out";//  
-                    parent.$("#nav_login").remove();//parent?
-                    console.log("remove");
-//                    $("#nav_login").val('Log out');//////////////
-                    $("#nav_login").prev("span").attr("nav_login","nav_logout"); /////////
-                    
                     $("#fb_logout").show();
                     parent.$.fancybox.close();                      
                 },
@@ -82,6 +76,13 @@ function clickFBLogin(){
                     alert("error~~~~~");
                 }
             });
+            
+//                    document.getElementById("nav_login").text()="Log out";//  
+                    parent.$("#nav_login").remove();//parent?
+                    console.log("remove");
+//                    $("#nav_login").val('Log out');//////////////
+                    $("#nav_login").prev("span").attr("nav_login","nav_logout"); /////////
+            
             
         } else if (response.status === 'not_authorized') {
             console.log("no authorized!!");
