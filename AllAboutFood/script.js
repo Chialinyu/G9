@@ -47,9 +47,9 @@ function clickFBLogin(){
             console.log("connected!!");
             
             var loginbuuttondiv = document.getElementById("fb_login");
-            loginbuuttondiv.style.display=none;
+            loginbuuttondiv.style.display="none";
             var logoutbuuttondiv = document.getElementById("fb_logout");
-            logoutbuuttondiv.style.display=block;
+            logoutbuuttondiv.style.display="block";
             
             document.cookie = response.authResponse.userID;
             console.log("id=",response.authResponse.userID);
@@ -79,9 +79,9 @@ function clickFBLogin(){
         } else if (response.status === 'not_authorized') {
             console.log("no authorized!!");
             var loginbuuttondiv = document.getElementById("fb_login");
-            loginbuuttondiv.style.display=none;
+            loginbuuttondiv.style.display="none";
             var logoutbuuttondiv = document.getElementById("fb_logout");
-            logoutbuuttondiv.style.display=block;
+            logoutbuuttondiv.style.display="block";
             FacebookLogin();
                
             
@@ -89,9 +89,9 @@ function clickFBLogin(){
             console.log("not login yet!!");
             // the user isn't logged in to Facebook.
             var loginbuuttondiv = document.getElementById("fb_login");
-            loginbuuttondiv.style.display=block;
+            loginbuuttondiv.style.display="block";
             var logoutbuuttondiv = document.getElementById("fb_logout");
-            logoutbuuttondiv.style.display=none;
+            logoutbuuttondiv.style.display="none";
             FacebookLogin();
 
         }
