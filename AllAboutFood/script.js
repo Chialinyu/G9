@@ -107,6 +107,7 @@ function clickFBLogin(){
 //LOGIN Fix
 
 function FacebookLogin() {
+    deleteAllCookies();
     FB.login(function (response) {
         if (response.authResponse) {
             FB.api('/me', function (response) {
