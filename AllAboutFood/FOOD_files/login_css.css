@@ -4,18 +4,14 @@
 	background-color: #F1CF89;
 }*/
 
-.login_section {	
-	height: 396px;
+.login_section {
+    margin: 1em;
+	height: 400px;
 	width: 700px;
 	background-color: #F1CF89;
-/*	text-align: left;*/
-	-webkit-border-radius: 50px;
-	-moz-border-radius: 50px;
-	border-radius: 50px;
 	font-family: Verdana ;
 	color: #423E4C ;
 	position: relative;
-	top:20px;
 
 }
 
@@ -64,32 +60,52 @@
 	vertical-align: middle;
 }
 
-  #fb_login{	
-	height: 53px;
-	width: 286px;
-	border: none ;
-	background-color: transparent;
+  #fb_login,#login_bt2,#fb_logout{	
+    display:  inline-block;
+	height: 50px;
+    float: none;
 	margin-top: 20px;
-	margin-left: 150px;
+	margin-left: 30px;
+    color: white;
+/*    margin-right: auto;*/
+}
+#fb_login{
+    width: 200px;
+    background: url("../FOOD_files/loginfb.png");
+}
+#login_bt2{
+    width: 150px;
+    background: url("../FOOD_files/login2.png");
+}
+#fb_logout{
+    width: 150px;
+    background: url("../FOOD_files/login2.png");
 }
 
- #fb_login img{
-	height: 53px;
-	width: 286px;	
+/*
+ #fb_login,#login_bt2,#fb_logout img{
+     display: inline-block;
+	height: 50px;
+	width: 200px;	
 }
+*/
 
- #login_bt,#fb_logout{	
+/*
+ #login_bt2,#fb_logout{	
 	height: 53px;
 	width: 136px;
 	border: none ;
 	background-color: transparent;
 	margin-top: 5px;
 }
+*/
 
-#login_bt,#fb_logout img{
+/*
+#login_bt2,#fb_logout img{
 	height: 53px;
 	width: 136px;	
 }
+*/
 
  #sign_up {
 	height: 53px;

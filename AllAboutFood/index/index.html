@@ -42,7 +42,7 @@
 		$('.fancybox').fancybox({
             padding:0, margin:0 ,background: 'none',
     		'type': 'inline', //change from iframe
-    		'scrolling': 'yes',
+    		'scrolling': 'no',
 //            "width":400,"height":300,
             'afterClosed': function(){
                 parent.location.reload(true); 
@@ -460,9 +460,9 @@
                     </fb:login-button>
     -->
 
-            <button  id="fb_login" onclick="clickFBLogin()"><img src='../FOOD_files/loginfacebook.png' alt="Facebook Login"></button>
-            <button  id="login_bt" onclick="testshow()"><img src='../FOOD_files/login.png' alt="Login" /></button>
-            <button  id="fb_logout" onclick="FacebookLogout()"><img src='../FOOD_files/login.png' alt="Logout" /></button>
+            <button  id="fb_login" onclick="clickFBLogin()">Sign in FB</button>
+            <button  id="login_bt2" onclick="testshow()">Sign in</button>
+            <button  id="fb_logout" onclick="FacebookLogout()">Log out</button>
     <!--        <button class="click">123</button>-->
 
             </section>
