@@ -98,7 +98,7 @@ function FacebookLogin() {
                                 facebookID.save();
                               }
                               
-                              document.cookie= "userId="+userID;
+                              document.cookie= userID;
 
                           }, 
                           error: function(error) {
