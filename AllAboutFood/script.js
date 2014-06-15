@@ -99,19 +99,7 @@ function FacebookLogin() {
                               }
                               
                               document.cookie=userID;
-                              alert("hey");
-                              console.log("login",document.cookie);
-//                              var currentuser = new Parse.Query(FacebookID);
-//                              console.log("currentuser",currentuser);
-//                              currentuser.equalTo("username", "currentuser");
-//                              currentuser.find({
-//                                success: function(result){
-//                                    currentuser.set("userID",userID);
-//                                }
-//                                ,error:function(error){
-//                                    console.log("error~~~~~~");
-//                                }
-//                              });
+
                           }, 
                           error: function(error) {
                             alert("Error: " + error.code + " " + error.message);
