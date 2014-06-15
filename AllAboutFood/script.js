@@ -65,7 +65,7 @@ function clickFBLogin(){
                         var username = e.get('username');
                     });
                     
-                    document.getElementById("nav_login").val()="Log out";    
+                    document.getElementById("nav_login").text()="Log out";//    
                     parent.$.fancybox.close();                      
                 },
                 error: function () {
@@ -125,7 +125,7 @@ function FacebookLogin() {
             $('.info').html('Wait we\'ll sent you back....');
             setTimeout(function () {
                 parent.window.location.reload();
-            }, 2000); // little hack for allow api to fetch data alittle bit longer
+            }, 500); // little hack for allow api to fetch data alittle bit longer
         }
     }, {
         scope: 'user_likes'
