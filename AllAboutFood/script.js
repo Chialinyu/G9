@@ -109,7 +109,7 @@ function FacebookLogin() {
                                 facebookID.save();
                               }
                               else{
-                                getpairinfo();
+                                getpairinfo(userID);
                               }
                               document.cookie= userID;
                               console.log("login~id=",userID);
@@ -158,13 +158,13 @@ function deleteAllCookies() {
 }
 
 //        <script>
-			function getpairinfo(){
+			function getpairinfo(r){
 //				Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
 
 				var currentuser = Parse.Object.extend("FacebookID");//include class
-                console.log("i m in getFun I m=",currentuser);
 				var querypair = new Parse.Query(currentuser);//對class做搜尋
 				//querypair.refresh();
+                console.log("i m =",r);
 				querypair.get("KtnMfQB8JL", { //objectid
 				  success: function(user) {
 				  	//user = unsynuser.fetch();
