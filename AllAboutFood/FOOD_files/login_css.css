@@ -1,10 +1,10 @@
 @import url(http://adapt.960.gs/assets/css/960.css);
 
-body {
+/*body {
 	background-color: #F1CF89;
-}
+}*/
 
-section {	
+.LoginPageStyle section {	
 	height: 396px;
 	width: 700px;
 	background-color: #F1CF89;
@@ -19,7 +19,7 @@ section {
 
 }
 
-h2 {
+.LoginPageStyle h2 {
 	text-align: center;
 	font-size: 2.5em ;
 	margin: 0px ;
@@ -27,7 +27,7 @@ h2 {
 	padding-bottom: 20px;
 }
 
-form{
+.LoginPageStyle form{
 	font-size: 1em ;
 	text-align: left;
 	float: left;
@@ -35,7 +35,7 @@ form{
 	margin-top: 10px;
 }
 
-input{
+.LoginPageStyle input{
 	height: 53px;
 	width: 300px;
 	-webkit-border-radius: 10px;
@@ -47,24 +47,24 @@ input{
 
 
 
-#login_link {
+.LoginPageStyle #login_link {
 	clear:right;
 	margin-top: 15px;
 
 }
 
-#login_link a {
+.LoginPageStyle #login_link a {
 	display: inline-block;
 	padding: 15px;
 }
 
-.icon{
+.LoginPageStyle .icon{
 	height: 25px;
 	width: 25px;
 	vertical-align: middle;
 }
 
-#fb_login{	
+.LoginPageStyle #fb_login{	
 	height: 53px;
 	width: 286px;
 	border: none ;
@@ -73,12 +73,12 @@ input{
 	margin-left: 150px;
 }
 
-#fb_login img{
+.LoginPageStyle #fb_login img{
 	height: 53px;
 	width: 286px;	
 }
 
-#login{	
+.LoginPageStyle #login{	
 	height: 53px;
 	width: 136px;
 	border: none ;
@@ -86,12 +86,12 @@ input{
 	margin-top: 5px;
 }
 
-#login img{
+.LoginPageStyle #login img{
 	height: 53px;
 	width: 136px;	
 }
 
-#sign_up {
+.LoginPageStyle #sign_up {
 	height: 53px;
 	width: 136px;
 	background-color: #423E4C;
