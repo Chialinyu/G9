@@ -51,7 +51,7 @@ function clickFBLogin(){
             
 //            document.getElementById("fb_login").style.display='none';
 //            document.getElementById("fb_logout").style.display='block';
-            $("#fb_logout").show();
+            
             
             document.cookie = response.authResponse.userID;
             console.log("id=",response.authResponse.userID);
@@ -68,9 +68,11 @@ function clickFBLogin(){
                     });
                     
 //                    document.getElementById("nav_login").text()="Log out";//  
-                    $("#nav_login").val('Log out');//////////////
+                    $("#nav_login").remove();
+//                    $("#nav_login").val('Log out');//////////////
                     $("#nav_login").prev("span").attr("nav_login","nav_logout"); /////////
                     
+                    $("#fb_logout").show();
                     parent.$.fancybox.close();                      
                 },
                 error: function () {
@@ -83,12 +85,14 @@ function clickFBLogin(){
             console.log("no authorized!!");
 //            document.getElementById("fb_login").style.display='none';
 //            document.getElementById("fb_logout").style.display='block';
+            $("#fb_logout").hide();//
             FacebookLogin();
                
             
         } else {
             console.log("not login yet!!");
             // the user isn't logged in to Facebook.
+            $("#fb_logout").hide();//
 //            document.getElementById("fb_login").style.display='block';
 //            document.getElementById("fb_logout").style.display='none';
             FacebookLogin();
