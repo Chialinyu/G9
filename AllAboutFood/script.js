@@ -131,7 +131,7 @@ function FacebookLogin() {
                               
                               document.cookie= userID;
                               console.log("login~id=",userID);
-                              $("#UserName").append('<p >'+"Hi~ "+userName+"</p>");
+//                              $("#UserName").append('<p >'+"Hi~ "+userName+"</p>");
                               
 //                              var currentuser = new Parse.Query(FacebookID);
 //                              currentuser.equalTo("username", "currentuser");
@@ -151,7 +151,7 @@ function FacebookLogin() {
             });
             $('.info').html('Wait we\'ll sent you back....');
             setTimeout(function () {
-                parent.window.location.reload();
+                window.location.reload();//parent
             }, 2000); // little hack for allow api to fetch data alittle bit longer
         }
     }, {
@@ -163,7 +163,7 @@ function FacebookLogout() {
     FB.getLoginStatus(function(response) {
         if (response && response.status === 'connected') {
             FB.logout(function(response) {
-                parent.document.location.reload();
+                document.location.reload();//parent
             });
         }
     });
