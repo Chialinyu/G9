@@ -229,6 +229,7 @@ footer {
 }
 
 .box{
+    margin: 5px;
     display: inline-block;
     height: 60px;
     width: 60px;
