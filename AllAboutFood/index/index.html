@@ -292,7 +292,9 @@
 								<p>Start with your new life!</p>
 							</div>
 							<div class="block block-60" >
+                                
                                 <div id="UserName"></div>
+                                
                                 <div id="refrigerator"></div>
 <!--
 								<p><strong>Here is your fridge.</strong></p>
@@ -401,6 +403,26 @@
 //                // this will be called when the roundtrip to Facebook has completed
 //                
 //                }, true);
+                
+                //parse 傳資料 update item
+                Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
+
+				var currentuser = Parse.Object.extend("FacebookID");//include class
+				var query = new Parse.Query(currentuser);//對class做搜尋
+				query.equalTo("userID","814579645218777");
+				var ans = 0;
+				//var d = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+				//query.id = "DZZVW4YIDM";
+				query.first({
+  				  success: function(object) {
+  				  	console.log(object);
+				    object.set("ingredient", searchInput);
+				    object.save();
+				 },
+				  error: function(error) {
+				    alert("Error: " + error.code + " " + error.message);
+				  }
+				});
                 
             })
 
