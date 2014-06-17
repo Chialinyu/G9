@@ -14,6 +14,32 @@ window.fbAsyncInit = function () {
         cookie     : true // enable cookies to allow Parse to access the session
     });
 
+    FB.getLoginStatus(function(response){
+     if (response.status === 'connected'){
+     
+     }else if (response.status === 'not_authorized'){
+           console.log("this user is not authorizied your apps");
+//      FB.login(function (response) {
+//          if (response.authResponse) { 
+//              
+//              // if user login to your apps right after handle an event
+//              window.location.reload();
+//          };
+//      }, {
+////          scope: 'user_about_me,email,user_location,user_photos,publish_actions,user_birthday,user_likes'
+//      });
+     }else{
+//           console.log("this isn't logged in to Facebook.");
+//      FB.login(function (response) {
+//          if (response.authResponse) {
+//              window.location.reload();
+//          } else {
+////              alertify.alert('An Error has Occurs,Please Reload your Pages');
+//          }
+//      });
+         
+     }
+    });
 }; //<<<<<<<<<<<<<<<init end    
 
 //function reload(){
