@@ -641,15 +641,15 @@
 //        	console.log("haha");
 //        	});
             
-            <script>
+            
         	$('#login_bt2').click(function(){
         		console.log("haha1");
         		Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
 
 				var currentuser = Parse.Object.extend("FacebookID");//include class
 				var queryuser = new Parse.Query(currentuser);
-				query.equalTo("userID", userID)
-				query.find({
+				queryuser.equalTo("userID", userID)
+				queryuser.find({
                           success: function(results) {
                               console.log("results.length",results.length);
 //                               if (results.length === 0){//沒有資料回傳
@@ -700,7 +700,7 @@
 			    });
            });
 				
-        </script>
+       
             
         </script>
         
