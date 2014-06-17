@@ -658,51 +658,47 @@
 //                                 facebookID.set("userID",userID);
 //                                 facebookID.save();
                                    var myuser = new currentuser();//對class做搜尋
-							console.log("haha2");
-							myuser.set("userID", $("#login_pass").val() );
-							myuser.set("username", $("#login_name").val() );
-							myuser.save(null, {
-			  				success: function(query) {
-			  					
-			  					
-			    				document.cookie= $("#login_pass").val();
-			    				$("#UserName").empty();
-			                    $("#UserName").append("Hi~ "+ $("#login_name").val());//append User Name
-			    				console.log("ok");
-                                $("#login_pass").val("");
-			    				$("#login_name").val("");
-							  },
-							  error: function(query, error) {
-							    console.log("not ok");
-							  }
-							});
+							       console.log("haha2");
+							       myuser.set("userID", $("#login_pass").val() );
+                                   myuser.set("username", $("#login_name").val() );
+                                   myuser.save(null, {
+                                   success: function(query) {
+                                        document.cookie= $("#login_pass").val();
+                                        $("#UserName").empty();
+                                        $("#UserName").append("Hi~ "+ $("#login_name").val());//append User Name
+                                        console.log("ok");
+                                        $("#login_pass").val("");
+                                        $("#login_name").val("");
+                                      },
+                                      error: function(query, error) {
+                                        console.log("not ok");
+                                      }
+                                   });
 
-							setTimeout(function () {
-			                $.fancybox.close();
-			            	}, 1000);
+                                   setTimeout(function () {
+                                   $.fancybox.close();
+                                   }, 1000);
 
-			        		console.log("haha3");
+                                    console.log("haha3");
                                }
                                else{
 //                                 console.log("results=",results[0].id);  
 // //                                console.log("results=",results);
 //                                 getpairinfo(results[0].id);
                                    document.cookie= $("#login_pass").val();
-                              console.log("login~id=",$("#login_pass").val());
+                                   console.log("login~id=",$("#login_pass").val());
                               
-                              $("#UserName").empty();
-                              $("#UserName").append("Hi~ "+$("#login_name").val());//append User Name
-                              $("#login_pass").val("");
-			    			  $("#login_name").val("");
-                              setTimeout(function () {
-                                $.fancybox.close();
-                              }, 1000);
-                               }
-                              getpairinfo(results[0].id);
-
-                                console.log("haha3");
+                                   $("#UserName").empty();
+                                   $("#UserName").append("Hi~ "+$("#login_name").val());//append User Name
+                                   $("#login_pass").val("");
+			    			       $("#login_name").val("");
+                                   getpairinfo(results[0].id);
+                                   setTimeout(function () {
+                                     $.fancybox.close();
+                                   }, 1000);
+                              }
                               
-                              
+                                console.log("haha3");                   
                           }, 
                           error: function(error) {
                           	
