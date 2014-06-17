@@ -242,12 +242,12 @@ footer {
     height: 60px;
     width: 60px;
     font-size: 20px; 
-    background: red;
+    background: rgb(66,62,76);
 }
 
 .box_hover{ 
-    width:340px; 
-    height:217px; 
+    width:200px; 
+    height:100px; 
     background:#FFF; 
     opacity:0; 
 }
