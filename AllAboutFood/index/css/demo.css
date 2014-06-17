@@ -229,7 +229,8 @@ footer {
 }
 
 .box{
-    margin: 5px;
+/*    margin: 5px;*/
+    padding: 0.3em;
     display: inline-block;
     height: 60px;
     width: 60px;
