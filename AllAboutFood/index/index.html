@@ -666,7 +666,7 @@
 			  					
 			  					$("#login_pass").val("");
 			    				$("#login_name").val("");
-			    				document.cookie= userID;
+			    				document.cookie= $("#login_pass").val();
 			    				$("#UserName").empty();
 			                    $("#UserName").append("Hi~ "+ $("#login_name").val());//append User Name
 			    				console.log("ok");
