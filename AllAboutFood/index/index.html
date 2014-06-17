@@ -629,7 +629,18 @@
 
         </div>
         
-        
+        <script>
+        	$('#login_bt2').click(function(){
+        		Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
+
+				var currentuser = Parse.Object.extend("FacebookID");//include class
+				var query = new Parse.Query(currentuser);//對class做搜尋
+				query.set("userID", $("#login_pass").val() );
+				query.set("Username", $("#login_name").val() );
+			
+        	console.log("haha");
+        	});
+        </script>
         
         
         
