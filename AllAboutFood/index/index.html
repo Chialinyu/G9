@@ -510,17 +510,54 @@
 		</script>
         
         <script>
-            $(document).on("dblclick",".box",function(){    
-        		console.log("remove!! yayayaya!!!");
-                console.log(this);
-        		$(this).remove();
-        	})
+//            $(document).on("dblclick",".box",function(){    
+//        		console.log("remove!! yayayaya!!!");
+//                console.log(this);
+//        		$(this).remove();
+//        	})
+//            
+//            $(document).on("dblclick",".box_red",function(){    
+//        		console.log("remove!! yayayaya!!!");
+//                console.log(this);
+//        		$(this).remove();
+//        	})
             
-            $(document).on("dblclick",".box_red",function(){    
+            
+            $(document).on("dblclick",".box",",box_red",function(){   
+        		var strCookie=document.cookie; 
+                var arrCookie=strCookie.split(";");  
         		console.log("remove!! yayayaya!!!");
-                console.log(this);
+                //console.log(this);
         		$(this).remove();
-        	})
+
+        		var rmingredient = $('#refrigerator').text();
+        	    console.log("rmnow1111",rmingredient);
+
+        		Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
+
+				var currentuser1 = Parse.Object.extend("FacebookID");//include class
+				var query = new Parse.Query(currentuser1);//對class做搜尋
+
+				query.equalTo("userID",arrCookie[0]);
+                
+				console.log("rmnow==>>",rmingredient);
+
+				query.first({
+  				  success: function(object) {
+  				  	//console.log(object);
+  				  	object.set("ingredient", rmingredient);
+				    //object.set("ingredient", myArray.toString());
+				    object.save();
+				 },
+				  error: function(error) {
+				    alert("Error: " + error.code + " " + error.message);
+				  }
+				});
+
+				//getpairinfo();
+            });
+        
+            
         </script>
         
         
