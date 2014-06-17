@@ -234,6 +234,7 @@ footer {
     height: 60px;
     width: 60px;
     font-size: 20px; 
+    text-align: center;
 }
 
 .box_red{
@@ -243,6 +244,7 @@ footer {
     width: 60px;
     font-size: 20px; 
     background: rgb(66,62,76);
+    text-align: center;
 }
 
 .box_hover{ 
@@ -258,6 +260,7 @@ footer {
     text-align:justify; 
     color:rgb(208,101,3); 
     font-size:20px; 
+    text-align: center;
 /*
     font-weight:700; 
     font-family:"Times New Roman", Times, serif; 
