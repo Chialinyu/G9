@@ -19,6 +19,7 @@ window.fbAsyncInit = function () {
      console.log("connected!! in init");
            $("#UserName").empty();
            $("#UserName").append("Hi~ "+response.authResponse.name);//append User Name
+         console.log(response);
      }else if (response.status === 'not_authorized'){
            console.log("this user is not authorizied your apps in init");
 
