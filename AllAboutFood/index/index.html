@@ -690,6 +690,7 @@
                               
                                    $("#UserName").empty();
                                    $("#UserName").append("Hi~ "+$("#login_name").val());//append User Name
+                                   
                                    $("#login_pass").val("");
 			    			       $("#login_name").val("");
                                    getpairinfo(results[0].id);
@@ -701,7 +702,7 @@
                                 console.log("haha3");                   
                           }, 
                           error: function(error) {
-                          	
+                          	alert("Error: " + error.code + " " + error.message);
 			        	}
 			    });
            });
