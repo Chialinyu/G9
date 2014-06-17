@@ -16,28 +16,12 @@ window.fbAsyncInit = function () {
 
     FB.getLoginStatus(function(response){
      if (response.status === 'connected'){
-     
+     console.log("connected!! in init");
      }else if (response.status === 'not_authorized'){
-           console.log("this user is not authorizied your apps");
-//      FB.login(function (response) {
-//          if (response.authResponse) { 
-//              
-//              // if user login to your apps right after handle an event
-//              window.location.reload();
-//          };
-//      }, {
-////          scope: 'user_about_me,email,user_location,user_photos,publish_actions,user_birthday,user_likes'
-//      });
+           console.log("this user is not authorizied your apps in init");
+
      }else{
-//           console.log("this isn't logged in to Facebook.");
-//      FB.login(function (response) {
-//          if (response.authResponse) {
-//              window.location.reload();
-//          } else {
-////              alertify.alert('An Error has Occurs,Please Reload your Pages');
-//          }
-//      });
-         
+      console.log("not login in init");   
      }
     });
 }; //<<<<<<<<<<<<<<<init end    
@@ -192,16 +176,47 @@ function deleteAllCookies() {
 				var currentuser = Parse.Object.extend("FacebookID");//include class
 				var querypair = new Parse.Query(currentuser);//對class做搜尋
 				//querypair.refresh();
+                
+                var date = new Date($.now());
+                var month = new Array(12);
+                    month[0] = "01";
+                    month[1] = "02";
+                    month[2] = "03";
+                    month[3] = "04";
+                    month[4] = "05";
+                    month[5] = "06";
+                    month[6] = "07";
+                    month[7] = "08";
+                    month[8] = "09";
+                    month[9] = "10";
+                    month[10] = "11";
+                    month[11] = "12";
+                
+                var Year = date.getFullYear();
+                var Month = month[date.getMonth()];
+                var Day = date.getDate();
+                
+                var numDate = parseInt(Year+Month+Day);
+                
 				querypair.get(ObjectID, { //objectid
 				  success: function(user) {
 				  	//user = unsynuser.fetch();
 				  	//querypair.refresh();
 				  	console.log(user.get("ingredient"));
 				  	var obj = user.get("ingredient").split(",");
+                      
+                      
 				  	for(var i=0; i<obj.length; i=i+2){
-				  		//console.log( (parseInt(obj[i],10)) );
-				  		console.log("obj" + obj[i] );
-                        $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+"</div>");
+                        if(parseInt(obj[i+1]) > (parseInt(Year+Month+Day) - 7)){
+                            console.log("obj" + obj[i] );
+                            $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+"</div>");
+				  	}
+                      
+                    for(var j=1; j<obj.length; j=j+2){
+                        if(parseInt(obj[j]) <= (parseInt(Year+Month+Day) - 7)){
+				  		    console.log("obj" + obj[i] );
+                            $('#refrigerator').append('<div class="box" value='+obj[j-1]+'>'+obj[j-1]+"</div>");
+                        }
 				  	}
 				  	
 				  },
