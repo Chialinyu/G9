@@ -23,7 +23,7 @@ window.fbAsyncInit = function () {
             $("#UserName").empty();
             $("#UserName").append("Hi~ "+response.name);//append User Name
          console.log(response,response.name);
-            }       
+            });       
         }
 
      }else if (response.status === 'not_authorized'){
