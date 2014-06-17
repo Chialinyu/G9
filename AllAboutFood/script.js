@@ -241,8 +241,8 @@ function getpairinfo(ObjectID){
 				  	//user = unsynuser.fetch();
 				  	//querypair.refresh();
 				  	console.log(user.get("ingredient"));
-				  	var obj = user.get("ingredient").split(",");
-                      
+				  	//var obj = user.get("ingredient").split(",");
+                    var obj = user.get("ingredient").split(' ');
                       
 				  	for(var i=0; i<obj.length; i=i+2){
                         if(parseInt(obj[i+1]) > (parseInt(Year+Month+Day) - 7)){
