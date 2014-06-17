@@ -630,16 +630,78 @@
         </div>
         
         <script>
+//        	$('#login_bt2').click(function(){
+//        		Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
+//
+//				var currentuser = Parse.Object.extend("FacebookID");//include class
+//				var query = new Parse.Query(currentuser);//對class做搜尋
+//				query.set("userID", $("#login_pass").val() );
+//				query.set("Username", $("#login_name").val() );
+//			
+//        	console.log("haha");
+//        	});
+            
+            <script>
         	$('#login_bt2').click(function(){
+        		console.log("haha1");
         		Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
 
 				var currentuser = Parse.Object.extend("FacebookID");//include class
-				var query = new Parse.Query(currentuser);//對class做搜尋
-				query.set("userID", $("#login_pass").val() );
-				query.set("Username", $("#login_name").val() );
-			
-        	console.log("haha");
-        	});
+				var queryuser = new Parse.Query(currentuser);
+				query.equalTo("userID", userID)
+				query.find({
+                          success: function(results) {
+                              console.log("results.length",results.length);
+//                               if (results.length === 0){//沒有資料回傳
+//                                 var facebookID = new FacebookID();//不用自己手動建class
+//                                 facebookID.set("username",userName);
+//                                 facebookID.set("userID",userID);
+//                                 facebookID.save();
+//                               }
+//                               else{
+//                                 console.log("results=",results[0].id);  
+// //                                console.log("results=",results);
+//                                 getpairinfo(results[0].id);
+//                               }
+                              document.cookie= userID;
+                              console.log("login~id=",userID);
+                              $("#login_pass").val("");
+			    			  $("#login_name").val("");
+                              $("#UserName").empty();
+                              $("#UserName").append("Hi~ "+response.name);//append User Name
+
+                          }, 
+                          error: function(error) {
+                          	var myuser = new currentuser();//對class做搜尋
+							console.log("haha2");
+							myuser.set("userID", $("#login_pass").val() );
+							myuser.set("username", $("#login_name").val() );
+							myuser.save(null, {
+			  				success: function(query) {
+			  					
+			  					$("#login_pass").val("");
+			    				$("#login_name").val("");
+			    				document.cookie= userID;
+			    				$("#UserName").empty();
+			                    $("#UserName").append("Hi~ "+ $("#login_name").val());//append User Name
+			    				console.log("ok");
+							  },
+							  error: function(query, error) {
+							    console.log("not ok");
+							  }
+							});
+
+							setTimeout(function () {
+			                $.fancybox.close();
+			            	}, 1000);
+
+			        		console.log("haha3");
+			        	}
+			    });
+           });
+				
+        </script>
+            
         </script>
         
         
