@@ -245,6 +245,22 @@ footer {
     background: red;
 }
 
+.box_hover{ 
+    width:340px; 
+    height:217px; 
+    background:#FFF; 
+    opacity:0; 
+}
+
+.box:hover .box_hover{ 
+    opacity:0.6; 
+    text-align:justify; 
+    color:#000000; 
+    font-size:20px; 
+    font-weight:700; 
+    font-family:"Times New Roman", Times, serif; 
+    padding:30px; 
+}
 
 .gsc-input{
     display: none;

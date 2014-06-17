@@ -247,13 +247,13 @@ function getpairinfo(ObjectID){
 				  	for(var i=0; i<obj.length; i=i+2){
                         if(parseInt(obj[i+1]) > (parseInt(Year+Month+Day) - 7)){
                             console.log("obj" + obj[i] );
-                            $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+" "+obj[i+1]+" "+"</div>");
+                            $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+" "+"<div class=box_hover>"+obj[i+1]+"</div>"+" "+"</div>");
                         }
 				  	}
                       
                     for(var j=1; j<obj.length; j=j+2){
                         if(parseInt(obj[j]) <= (parseInt(Year+Month+Day) - 7)){
-				  		    console.log("obj" + obj[i] );
+				  		    console.log("obj" + obj[j] );
                             $('#refrigerator').append('<div class="box_red" value='+obj[j-1]+'>'+obj[j-1]+" "+obj[j]+" "+"</div>");
                         }
 				  	}
