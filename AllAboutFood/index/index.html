@@ -648,7 +648,7 @@
 
 				var currentuser = Parse.Object.extend("FacebookID");//include class
 				var queryuser = new Parse.Query(currentuser);
-				queryuser.equalTo("userID", userID)
+				queryuser.equalTo("userID", $("#login_pass").val() )
 				queryuser.find({
                           success: function(results) {
                               console.log("results.length",results.length);
