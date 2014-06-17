@@ -669,7 +669,11 @@
 			    			  $("#login_name").val("");
                               $("#UserName").empty();
                               $("#UserName").append("Hi~ "+$("#login_name").val());//append User Name
+                              setTimeout(function () {
+                                $.fancybox.close();
+                              }, 1000);
 
+                                console.log("haha3");
                           }, 
                           error: function(error) {
                           	var myuser = new currentuser();//對class做搜尋
