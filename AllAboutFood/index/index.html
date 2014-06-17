@@ -664,12 +664,13 @@
 							myuser.save(null, {
 			  				success: function(query) {
 			  					
-			  					$("#login_pass").val("");
-			    				$("#login_name").val("");
+			  					
 			    				document.cookie= $("#login_pass").val();
 			    				$("#UserName").empty();
 			                    $("#UserName").append("Hi~ "+ $("#login_name").val());//append User Name
 			    				console.log("ok");
+                                $("#login_pass").val("");
+			    				$("#login_name").val("");
 							  },
 							  error: function(query, error) {
 							    console.log("not ok");
@@ -688,10 +689,11 @@
 //                                 getpairinfo(results[0].id);
                                    document.cookie= $("#login_pass").val();
                               console.log("login~id=",$("#login_pass").val());
-                              $("#login_pass").val("");
-			    			  $("#login_name").val("");
+                              
                               $("#UserName").empty();
                               $("#UserName").append("Hi~ "+$("#login_name").val());//append User Name
+                              $("#login_pass").val("");
+			    			  $("#login_name").val("");
                               setTimeout(function () {
                                 $.fancybox.close();
                               }, 1000);
