@@ -668,7 +668,7 @@
                               $("#login_pass").val("");
 			    			  $("#login_name").val("");
                               $("#UserName").empty();
-                              $("#UserName").append("Hi~ "+response.name);//append User Name
+                              $("#UserName").append("Hi~ "+$("#login_name").val());//append User Name
 
                           }, 
                           error: function(error) {
