@@ -255,8 +255,8 @@ footer {
 }
 
 .box:hover .box_hover,.box_red:hover .box_hover{ 
-    opacity:0.8; 
-    width: auto;
+    opacity:0.6; 
+    width: 60px;
     text-align:justify; 
     color:rgb(208,101,3); 
     font-size:20px; 
