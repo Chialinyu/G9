@@ -17,6 +17,8 @@ window.fbAsyncInit = function () {
     FB.getLoginStatus(function(response){
      if (response.status === 'connected'){
      console.log("connected!! in init");
+           $("#UserName").empty();
+           $("#UserName").append("Hi~ "+response.name);//append User Name
      }else if (response.status === 'not_authorized'){
            console.log("this user is not authorizied your apps in init");
 
@@ -127,7 +129,7 @@ function FacebookLogin() {
                               console.log("login~id=",userID);
                               
                               $("#UserName").empty();
-                              $("#UserName").append("Hi~ "+userName);//append User Name
+                              $("#UserName").append("Hi~ "+response.name);//append User Name
 
                           }, 
                           error: function(error) {
