@@ -22,7 +22,7 @@ window.fbAsyncInit = function () {
             var userName = response.name;
             $("#UserName").empty();
             $("#UserName").append("Hi~ "+response.name);//append User Name
-         console.log(response,response.name);
+//         console.log(response,response.name);
             });       
         }
 
@@ -186,6 +186,7 @@ function deleteAllCookies() {
 				var querypair = new Parse.Query(currentuser);//對class做搜尋
 				//querypair.refresh();
                 
+                //Max 6/17 plus date 
                 var date = new Date($.now());
                 var month = new Array(12);
                     month[0] = "01";
