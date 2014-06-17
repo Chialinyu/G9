@@ -386,7 +386,7 @@
         <script>
             
             //choose~~in~~box~~
-            var searchInput = "";
+            var searchInput = $("#gsc-i-id1").val() ;
 //            var times = 0;
             var myArray = [];
             $('.Ingredient li a').click(function(){
@@ -427,7 +427,7 @@
                 
                 var numDate = parseInt(Year+Month+Day);
                 
-                searchInput += content + " ";
+                //searchInput += content + " ";
 
                 myArray.push( content );
                 myArray.push( numDate );

@@ -235,7 +235,7 @@ function getpairinfo(ObjectID){
                 var Day = date.getDate();
                 
                 var numDate = parseInt(Year+Month+Day);
-                
+                var searchInput = "";
 				querypair.get(ObjectID, { //objectid
 				  success: function(user) {
 				  	//user = unsynuser.fetch();
@@ -249,6 +249,8 @@ function getpairinfo(ObjectID){
                         if(parseInt(obj[j]) <= (parseInt(Year+Month+Day) - 7)){
 				  		    console.log("obj" + obj[j] );
                             $('#refrigerator').append('<div class="box_red" value='+obj[j-1]+'>'+obj[j-1]+" "+'<div class="box_hover">'+obj[j]+" "+"</div>");
+                            searchInput += obj[j-1] + " ";
+                            
                         }
 				  	}
                       
@@ -256,9 +258,10 @@ function getpairinfo(ObjectID){
                         if(parseInt(obj[i+1]) > (parseInt(Year+Month+Day) - 7)){
                             console.log("obj" + obj[i] );
                             $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+" "+'<div class="box_hover">'+obj[i+1]+"</div>"+" "+"</div>");
+                            searchInput += obj[i] + " ";
                         }
 				  	}
-				  	
+				  	$('#gsc-i-id1').val(searchInput);
                       
 				  },
 				  error: function(object, error) {
