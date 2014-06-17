@@ -229,14 +229,13 @@ footer {
 }
 
 .box{
-/*    margin: 5px;*/
-    padding: 0.3em;
+    margin: 5px;
     display: inline-block;
     height: 60px;
     width: 60px;
     font-size: 20px; 
     text-align: center;
-    border-radius: 5px;
+/*    border-radius: 5px;*/
 }
 
 .box_red{
