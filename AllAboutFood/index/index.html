@@ -505,9 +505,9 @@
 		</script>
         
         <script>
-//            $('.box').dblclick(function(){
             $(document).on("dblclick",".box",function(){    
         		console.log("remove!! yayayaya!!!");
+                console.log(this);
         		$('.box').remove();
         	})
         </script>
