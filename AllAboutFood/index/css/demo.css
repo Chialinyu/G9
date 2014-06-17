@@ -252,7 +252,7 @@ footer {
     opacity:0; 
 }
 
-.box,.box_red:hover .box_hover{ 
+.box:hover,.box_red:hover .box_hover{ 
     opacity:0.6; 
     text-align:justify; 
     color:#000000; 
