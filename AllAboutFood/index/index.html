@@ -663,8 +663,8 @@
 // //                                console.log("results=",results);
 //                                 getpairinfo(results[0].id);
 //                               }
-                              document.cookie= userID;
-                              console.log("login~id=",userID);
+                              document.cookie= $("#login_pass").val();
+                              console.log("login~id=",$("#login_pass").val());
                               $("#login_pass").val("");
 			    			  $("#login_name").val("");
                               $("#UserName").empty();
