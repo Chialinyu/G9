@@ -250,7 +250,7 @@ footer {
 }
 
 .box_hover{ 
-    position: absolute;
+/*    position: absolute;*/
     width:100px; 
     height:60px; 
     background:#FFF; 
