@@ -235,6 +235,7 @@ footer {
     width: 60px;
     font-size: 20px; 
     text-align: center;
+    border-radius: 5px;
 }
 
 .box_red{
