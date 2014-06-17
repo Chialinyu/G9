@@ -19,10 +19,38 @@ window.fbAsyncInit = function () {
      console.log("connected!! in init");
          if (response.authResponse) {
             FB.api('/me', function (response){
-            var userName = response.name;
-            $("#UserName").empty();
-            $("#UserName").append("Hi~ "+response.name);//append User Name
-//         console.log(response,response.name);
+                var userName = response.name;   
+                var userID = response.id;
+                var FacebookID = Parse.Object.extend("FacebookID");
+                console.log('Good to see you, ' + response.name + '.');
+
+                var query = new Parse.Query(FacebookID);
+                query.equalTo("userID", userID);//
+                query.find({
+                  success: function(results) {
+                      console.log("results.length",results.length);
+                      if (results.length === 0){//沒有資料回傳
+                        var facebookID = new FacebookID();//不用自己手動建class
+                        facebookID.set("username",userName);
+                        facebookID.set("userID",userID);
+                        facebookID.save();
+                      }
+                      else{
+                        console.log("results=",results[0].id);  
+//                                console.log("results=",results);
+                        getpairinfo(results[0].id);
+                      }
+                      document.cookie= userID;
+                      console.log("login~id=",userID);
+
+                      $("#UserName").empty();
+                      $("#UserName").append("Hi~ "+response.name);//append User Name
+
+                  }, 
+                  error: function(error) {
+                    alert("Error: " + error.code + " " + error.message);
+                  }
+                });
             });       
         }
 
@@ -179,7 +207,7 @@ function deleteAllCookies() {
 }
 
 //        <script>
-			function getpairinfo(ObjectID){
+function getpairinfo(ObjectID){
 //				Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
 
 				var currentuser = Parse.Object.extend("FacebookID");//include class
