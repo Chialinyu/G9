@@ -247,7 +247,7 @@ function getpairinfo(ObjectID){
 				  	for(var i=0; i<obj.length; i=i+2){
                         if(parseInt(obj[i+1]) > (parseInt(Year+Month+Day) - 7)){
                             console.log("obj" + obj[i] );
-                            $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+" "+"<div class=box_hover>"+obj[i+1]+"</div>"+" "+"</div>");
+                            $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+" "+'<div class="box_hover">'+obj[i+1]+"</div>"+" "+"</div>");
                         }
 				  	}
                       
