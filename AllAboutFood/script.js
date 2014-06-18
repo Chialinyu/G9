@@ -22,6 +22,7 @@ window.fbAsyncInit = function () {
 //         document.getElementById("login_bt2").style.display='none';
 //         document.getElementById("fb_logout").style.display='show';
 //         console.log("show~~~~");
+         $("#nav_login").html("Log out");
          //
          if (response.authResponse) {
             FB.api('/me', function (response){
