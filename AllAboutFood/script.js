@@ -19,7 +19,7 @@ window.fbAsyncInit = function () {
      console.log("connected!! in init");
 //        //
 //         
-//         $("#nav_login").html("Log out");
+         $("#nav_login").html("Log out");
 //         document.getElementById("LoginPage").style.display='none';
 //         $("#nav_login").click(function(){
 //            FacebookLogout();
@@ -181,6 +181,7 @@ function FacebookLogin() {
                               
                               $("#UserName").empty();
                               $("#UserName").append("Hi~ "+response.name);//append User Name
+                                $("#nav_login").html("Log out");
 
                           }, 
                           error: function(error) {
