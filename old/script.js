@@ -16,7 +16,18 @@ window.fbAsyncInit = function () {
 
     FB.getLoginStatus(function(response){
      if (response.status === 'connected'){
-     console.log("connected!! in init");
+         console.log("connected!! in init");
+         //
+//         document.getElementById("fb_login").style.display='none';
+//         document.getElementById("login_bt2").style.display='none';
+//         document.getElementById("fb_logout").style.display='show';
+//         console.log("show~~~~");
+         $("#nav_login").html("Log out");
+         document.getElementById("LoginPage").style.display='none';
+         $("#nav_login").click(function(){
+            FacebookLogout();
+         })
+         //
          if (response.authResponse) {
             FB.api('/me', function (response){
                 var userName = response.name;   
@@ -55,10 +66,18 @@ window.fbAsyncInit = function () {
         }
 
      }else if (response.status === 'not_authorized'){
-           console.log("this user is not authorizied your apps in init");
+        console.log("this user is not authorizied your apps in init");
+//        document.getElementById("fb_login").style.display='show';
+//        document.getElementById("login_bt2").style.display='show'; 
+        document.getElementById("fb_logout").style.display='none';
+        console.log("hide1~~~~");         
 
      }else{
-      console.log("not login in init");   
+        console.log("not login in init"); 
+//        document.getElementById("fb_login").style.display='show'; 
+//        document.getElementById("login_bt2").style.display='show'; 
+        document.getElementById("fb_logout").style.display='none';
+        console.log("hide2~~~~");  
      }
     });
 }; //<<<<<<<<<<<<<<<init end    
@@ -80,7 +99,6 @@ function clickFBLogin(){
 //            document.getElementById("fb_login").style.display='none';
 //            document.getElementById("fb_logout").style.display='block';
             
-            
             document.cookie = response.authResponse.userID;//?
             console.log("js_id=",response.authResponse.userID);//?
             console.log("js_cookie=",document.cookie);//?
@@ -97,7 +115,16 @@ function clickFBLogin(){
                     
 //                    $("#fb_logout").show();
                     alert("used to login before~~~~~");
-                    parent.$.fancybox.close();                      
+                    parent.$.fancybox.close(); 
+                    
+                    //no use QAQ
+                    $("#nav_login").html("Log out");
+                    console.log("change log in to log out");
+                    document.getElementById("LoginPage").style.display='none';
+                     $("#nav_login").click(function(){
+                         FacebookLogout();
+                     })
+                     //
                 },
                 error: function () {
                     // error is an instance of Parse.Error.
@@ -117,6 +144,8 @@ function clickFBLogin(){
 //            document.getElementById("fb_login").style.display='none';
 //            document.getElementById("fb_logout").style.display='block';
 //            $("#fb_logout").hide();//
+            document.getElementById("fb_logout").style.display='none';
+            console.log("hide1~~~~"); 
             FacebookLogin();
                
             
@@ -126,6 +155,8 @@ function clickFBLogin(){
 //            $("#fb_logout").hide();//
 //            document.getElementById("fb_login").style.display='block';
 //            document.getElementById("fb_logout").style.display='none';
+            document.getElementById("fb_logout").style.display='none';
+            console.log("hide2~~~~"); 
             FacebookLogin();
 
         }
@@ -235,7 +266,7 @@ function getpairinfo(ObjectID){
                 var Day = date.getDate();
                 
                 var numDate = parseInt(Year+Month+Day);
-                var  searchInput= "";
+                var searchInput = "";
 				querypair.get(ObjectID, { //objectid
 				  success: function(user) {
 				  	//user = unsynuser.fetch();
@@ -249,7 +280,8 @@ function getpairinfo(ObjectID){
                         if(parseInt(obj[j]) <= (parseInt(Year+Month+Day) - 7)){
 				  		    console.log("obj" + obj[j] );
                             $('#refrigerator').append('<div class="box_red" value='+obj[j-1]+'>'+obj[j-1]+" "+'<div class="box_hover">'+obj[j]+" "+"</div>");
-
+                            searchInput += obj[j-1] + " ";
+                            
                         }
 				  	}
                       
@@ -257,49 +289,17 @@ function getpairinfo(ObjectID){
                         if(parseInt(obj[i+1]) > (parseInt(Year+Month+Day) - 7)){
                             console.log("obj" + obj[i] );
                             $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+" "+'<div class="box_hover">'+obj[i+1]+"</div>"+" "+"</div>");
-                            
-                            }
-                    }
-
-                    var nowingredient = $('#refrigerator').text();
-                    var tt = nowingredient.split(' ');
-                    searchInput= "";
-                    for(var i=0 ; i<tt.length-1; i+=2){
-                        if(i<6){
-                         searchInput += (tt[i] + " ");                      
+                            searchInput += obj[i] + " ";
                         }
-
-                    }
-                    $('#gsc-i-id1').val(searchInput);
-                    var strCookie=document.cookie; 
-                    var arrCookie=strCookie.split(";"); 
-                    console.log("userId的值是 ",arrCookie[0]);
-                    Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
-
-                    var currentuser = Parse.Object.extend("FacebookID");//include class
-                    var query = new Parse.Query(currentuser);//對class做搜尋
-                    query.equalTo("userID",arrCookie[0]);
-                    console.log("arr=",arrCookie[0]);
-                    console.log("gogo222222 ",nowingredient);
-
-                    query.first({
-                      success: function(object) {
-                        object.set("ingredient", nowingredient);
-                        object.save();
-                     },
-                      error: function(error) {
-                        alert("Error: " + error.code + " " + error.message);
-                      }
-                    });
-                
+				  	}
+				  	$('#gsc-i-id1').val(searchInput);
+                      
 				  },
 				  error: function(object, error) {
 				  	console.log("nonono");
 				    
 				  }
 				});
-                    
-                
 				
 			}
 //		</script>
