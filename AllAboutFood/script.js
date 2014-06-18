@@ -16,7 +16,9 @@ window.fbAsyncInit = function () {
 
     FB.getLoginStatus(function(response){
      if (response.status === 'connected'){
-     console.log("connected!! in init");
+         console.log("connected!! in init");
+         document.getElementById("fb_logout").style.display='none';
+         console.log("hide");
          if (response.authResponse) {
             FB.api('/me', function (response){
                 var userName = response.name;   
