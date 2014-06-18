@@ -116,11 +116,12 @@ function clickFBLogin(){
 //                    $("#fb_logout").show();
                     alert("used to login before~~~~~");
                     parent.$.fancybox.close(); 
-                    //
+                    
+                    //no use QAQ
                     $("#nav_login").html("Log out");
                     console.log("change log in to log out");
+                    document.getElementById("LoginPage").style.display='none';
                      $("#nav_login").click(function(){
-                         document.getElementById("LoginPage").style.display='none';
                          FacebookLogout();
                      })
                      //
