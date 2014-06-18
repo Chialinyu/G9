@@ -17,6 +17,14 @@ window.fbAsyncInit = function () {
     FB.getLoginStatus(function(response){
      if (response.status === 'connected'){
      console.log("connected!! in init");
+        //
+         $("#nav_login").html("Log out");
+         document.getElementById("LoginPage").style.display='none';
+         $("#nav_login").click(function(){
+            FacebookLogout();
+         })
+         //
+         
          if (response.authResponse) {
             FB.api('/me', function (response){
                 var userName = response.name;   
@@ -56,9 +64,16 @@ window.fbAsyncInit = function () {
 
      }else if (response.status === 'not_authorized'){
            console.log("this user is not authorizied your apps in init");
-
+        //
+         document.getElementById("fb_logout").style.display='none';
+         console.log("hide1~~~~"); 
+        //
      }else{
-      console.log("not login in init");   
+      console.log("not login in init");  
+         //
+        document.getElementById("fb_logout").style.display='none';
+        console.log("hide2~~~~");      
+        //
      }
     });
 }; //<<<<<<<<<<<<<<<init end    
