@@ -19,7 +19,7 @@ window.fbAsyncInit = function () {
          console.log("connected!! in init");
          //
          document.getElementById("fb_login").style.display='none';
-         document.getElementById("fb_logout").style.display='block';
+         document.getElementById("fb_logout").style.display='show';
          console.log("show~~~~");
          //
          if (response.authResponse) {
@@ -61,13 +61,13 @@ window.fbAsyncInit = function () {
 
      }else if (response.status === 'not_authorized'){
         console.log("this user is not authorizied your apps in init");
-        document.getElementById("fb_login").style.display='block';    
+        document.getElementById("fb_login").style.display='show';    
         document.getElementById("fb_logout").style.display='none';
         console.log("hide1~~~~");         
 
      }else{
         console.log("not login in init"); 
-        document.getElementById("fb_login").style.display='block'; 
+        document.getElementById("fb_login").style.display='show'; 
         document.getElementById("fb_logout").style.display='none';
         console.log("hide2~~~~");  
      }
