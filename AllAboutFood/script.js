@@ -24,6 +24,7 @@ window.fbAsyncInit = function () {
 //         console.log("show~~~~");
          $("#nav_login").html("Log out");
          $("#nav_login").click(function(){
+            document.getElementById("LoginPage").style.display='none';
             FacebookLogout();
          })
          //
@@ -99,7 +100,8 @@ function clickFBLogin(){
 //            document.getElementById("fb_logout").style.display='block';
          $("#nav_login").html("Log out");
          $("#nav_login").click(function(){
-            FacebookLogout();
+             document.getElementById("LoginPage").style.display='none';
+             FacebookLogout();
          })
             
             document.cookie = response.authResponse.userID;//?
