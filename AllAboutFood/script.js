@@ -98,12 +98,6 @@ function clickFBLogin(){
             
 //            document.getElementById("fb_login").style.display='none';
 //            document.getElementById("fb_logout").style.display='block';
-         $("#nav_login").html("Log out");
-            console.log("change log in to log out");
-         $("#nav_login").click(function(){
-             document.getElementById("LoginPage").style.display='none';
-             FacebookLogout();
-         })
             
             document.cookie = response.authResponse.userID;//?
             console.log("js_id=",response.authResponse.userID);//?
@@ -121,7 +115,15 @@ function clickFBLogin(){
                     
 //                    $("#fb_logout").show();
                     alert("used to login before~~~~~");
-                    parent.$.fancybox.close();                      
+                    parent.$.fancybox.close(); 
+                    //
+                    $("#nav_login").html("Log out");
+                    console.log("change log in to log out");
+                     $("#nav_login").click(function(){
+                         document.getElementById("LoginPage").style.display='none';
+                         FacebookLogout();
+                     })
+                     //
                 },
                 error: function () {
                     // error is an instance of Parse.Error.
