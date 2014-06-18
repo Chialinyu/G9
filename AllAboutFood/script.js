@@ -23,8 +23,8 @@ window.fbAsyncInit = function () {
 //         document.getElementById("fb_logout").style.display='show';
 //         console.log("show~~~~");
          $("#nav_login").html("Log out");
+         document.getElementById("LoginPage").style.display='none';
          $("#nav_login").click(function(){
-            document.getElementById("LoginPage").style.display='none';
             FacebookLogout();
          })
          //
